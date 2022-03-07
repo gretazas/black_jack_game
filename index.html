@@ -17,12 +17,12 @@
 
 <body>
 
-    <header>Messages!</header>
+    <header> <h1>Messages!</h1></header>
 
     <!-- Players div-->
 
-    <div>
-        <div id="you">
+    <div id="main">
+        <div id="you" class="play-area">
             <span id="you-score"></span>
             <div id="you-main"></div>
             <div></div>
@@ -33,17 +33,25 @@
 
         <!-- Dealers div -->
 
-        <div id="dealer">
+        <div id="dealer" class="play-area">
             <span id="dealer-score"></span>
             <div id="dealer-main"></div>
             <div></div>
         </div>
+
+    </div>   
+    
+    
         
-        <button type="button" class="btn btn-danger btn-lg">Deal</button>
-
-        <div>Messages!</div>
-    </div>
-
+    
+        <footer>
+            
+            <button type="button" class="btn btn-danger btn-lg">Deal</button>
+            
+            <h3>Messages!</h3>
+        
+        </footer>
+   
     <script src="assets/js/script.js"></script>
 </body>
 
