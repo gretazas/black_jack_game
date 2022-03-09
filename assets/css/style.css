@@ -8,10 +8,11 @@ body {
 
 .play-area {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
     width: 40%;
-    align-content: center;
-    align-items: baseline;
     height: 500px;
     margin: auto;
 }

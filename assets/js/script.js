@@ -9,3 +9,9 @@ let you = {
 let dealer = {
     'score' : 0,
 }
+function showCard() {
+    document.createElement('img');
+    image = document.getElementById('you-main').appendChild('img');
+    image.src = 'assets/images/2.png'
+}
+document.getElementsByTagName('button').addEventListener('click', showCard);
