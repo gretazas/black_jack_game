@@ -10,10 +10,22 @@ let dealer = {
     'score' : 0,
 }
 
-function showCard(event) {
-    let number = Math.floor(Math.random()* 13);
+//Show random card
+
+function showCard() {
+    number = Math.floor(Math.random()* 13);
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
-    document.getElementById('you-main').appendChild(image);console.log(number);
+    document.getElementById('you-main').appendChild(image);
+    showScore();
 }
-document.getElementById('hit').addEventListener("click", showCard);
+
+//Show players score
+
+function showScore() {
+    you.score += this.number;
+    console.log(number);
+    console.log(you);
+}
+
+document.getElementById('hit').addEventListener('click', showCard);
