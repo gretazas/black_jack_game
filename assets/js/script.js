@@ -9,9 +9,11 @@ let you = {
 let dealer = {
     'score' : 0,
 }
-function showCard() {
-    document.createElement('img');
-    image = document.getElementById('you-main').appendChild('img');
-    image.src = 'assets/images/2.png'
+
+function showCard(event) {
+    let number = Math.floor(Math.random()* 13);
+    let image = document.createElement('img');
+    image.src = 'assets/images/' + `${number}` + '.png';
+    document.getElementById('you-main').appendChild(image);console.log(number);
 }
-document.getElementsByTagName('button').addEventListener('click', showCard);
+document.getElementById('hit').addEventListener("click", showCard);

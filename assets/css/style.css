@@ -8,9 +8,9 @@ body {
 
 .play-area {
     display: flex;
-    flex-direction: row;
-    align-content: flex-end;
-    align-items: flex-end;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
     justify-content: center;
     width: 40%;
     height: 500px;
@@ -20,12 +20,40 @@ body {
 #main {
     display: flex;
     width: 80%;
-    align-content: center;
     align-items: center;
     flex-direction: row;
+    bottom: 0;
+    justify-content: center;
 }
 
 button {
-    bottom: 100px;
     margin: 20px;
+}
+
+#you-score {
+    height: 40px;
+    background-color: aqua;
+    width: 50px;
+    position: relative;
+    top: -100px;
+}
+
+#you-main {
+    display: flex;
+    height: 30%;
+    width: 20%;
+    background-color: aqua;
+}
+
+#buttons {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    bottom: -100px;
+}
+ 
+img {
+    height: 100%;
 }
