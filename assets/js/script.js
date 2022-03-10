@@ -14,17 +14,29 @@ let dealer = {
  * by pressing button 'hit'*/
 
 function showCard() {
-    number = Math.floor(Math.random()* 13);
+    number = Math.floor(Math.random()* 13) + 1;
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
     document.getElementById('you-main').appendChild(image);
-    showScore();
+    cardValue();
 }
 
+function cardValue() {
+    let card = this.number;
+
+        if(card > 10) {
+            card = 10;
+            
+        } else {
+            let card = this.number;
+        }
+     console.log(card);
+    showScore();
+}
 //Show players score
 
 function showScore() {
-    you.score += this.number;
+    you.score += this.card;
     let score = you.score;
     document.getElementById('you-score').textContent = score;
 }
@@ -41,7 +53,7 @@ function buttonStand () {
 //Show dealers score
 
 function dealercards() {
-    dealer.score += this.number;
+    dealer.score += this.card;
     let score = dealer.score;
         if(17 > score ) {
         buttonStand ()
