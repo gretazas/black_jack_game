@@ -24,6 +24,8 @@ function showCard() {
 
 function showScore() {
     you.score += this.number;
+    let score = you.score;
+    document.getElementById('you-score').textContent = score;
 }
 
 document.getElementById('hit').addEventListener('click', showCard);
