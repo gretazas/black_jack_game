@@ -10,7 +10,8 @@ let dealer = {
     'score' : 0,
 }
 
-//Show random card
+/**Show random card 
+ * by pressing button 'hit'*/
 
 function showCard() {
     number = Math.floor(Math.random()* 13);
@@ -28,7 +29,7 @@ function showScore() {
     document.getElementById('you-score').textContent = score;
 }
 
-
+/**Button 'Stand' changes active players from 'you' to 'dealer'*/
 function buttonStand () {
     number = Math.floor(Math.random()* 13);
     let image = document.createElement('img');
@@ -36,6 +37,8 @@ function buttonStand () {
     document.getElementById('dealer-main').appendChild(image);
     dealercards();
 }
+
+//Show dealers score
 
 function dealercards() {
     dealer.score += this.number;
@@ -47,6 +50,25 @@ function dealercards() {
     }
 
 }
+ /**Start over */
 
+function buttonDeal() {
+    you.score = 0;
+    let score = you.score;
+    document.getElementById('you-score').textContent = score;
+
+    dealer.score = 0;
+    let score1 = dealer.score;
+    document.getElementById('dealer-score').textContent = score1;
+
+
+    let images = document.getElementById('main').querySelectorAll('img');
+        for(let i=0; i<= images.length; i++) {
+            images[i].remove();
+        }
+        
+}
+console.log(dealer.score);
 document.getElementById('hit').addEventListener('click', showCard);
 document.getElementById('stand').addEventListener('click', buttonStand);
+document.getElementById('deal').addEventListener('click', buttonDeal);
