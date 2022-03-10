@@ -28,4 +28,25 @@ function showScore() {
     document.getElementById('you-score').textContent = score;
 }
 
+
+function buttonStand () {
+    number = Math.floor(Math.random()* 13);
+    let image = document.createElement('img');
+    image.src = 'assets/images/' + `${number}` + '.png';
+    document.getElementById('dealer-main').appendChild(image);
+    dealercards();
+}
+
+function dealercards() {
+    dealer.score += this.number;
+    let score = dealer.score;
+        if(17 > score ) {
+        buttonStand ()
+    }else {
+        document.getElementById('dealer-score').textContent = score;
+    }
+
+}
+
 document.getElementById('hit').addEventListener('click', showCard);
+document.getElementById('stand').addEventListener('click', buttonStand);

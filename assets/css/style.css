@@ -30,22 +30,21 @@ button {
     margin: 20px;
 }
 
-#you-score {
+#you-score, #dealer-score {
     height: 40px;
-    background-color: aqua;
+    background-color: rgb(130, 214, 119);
     width: 50px;
     position: relative;
     top: -100px;
     text-align: center ;
     padding: 5px;
-    font-weight: 800px;
+    border-radius: 10px;
 }
 
-#you-main {
+#you-main, #dealer-main {
     display: flex;
     height: 30%;
     width: 20%;
-    background-color: aqua;
 }
 
 #buttons {
@@ -59,4 +58,5 @@ button {
  
 img {
     height: 100%;
+    margin: 20px;
 }
