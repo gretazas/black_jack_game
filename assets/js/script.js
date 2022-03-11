@@ -21,6 +21,7 @@ function showCard() {
     cardValue();
 }
 
+//Cards over 10 value = 10
 function cardValue() {
   
         if(this.number > 10) {
@@ -43,9 +44,12 @@ function buttonStand () {
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
     document.getElementById('dealer-main').appendChild(image);
+    document.getElementById('stand').disabled = true;
+    
     dealerCardValue();
 }
 
+//Cards over 10 value = 10
 function dealerCardValue() {
   
     if(this.number > 10) {
@@ -57,6 +61,8 @@ function dealerCardValue() {
 //Show dealers score
 
 function dealercards() {
+    
+
     dealer.score += this.number;
     let score = dealer.score;
         if(17 > score ) {
@@ -64,11 +70,38 @@ function dealercards() {
     }else {
         document.getElementById('dealer-score').textContent = score;
     }
+    
+    winnerLoser();
+}
 
+//Decide who is the Winner
+
+function winnerLoser() {
+
+
+    if(you.score >= 21) {
+        document.getElementById('you-score').textContent = 'BUST!';
+        document.getElementById('you-score').style.color = 'red';
+        document.getElementById('message').textContent = "YOU LOST!!!";
+    } else if (dealer.score >= 21) {
+        document.getElementById('dealer-score').textContent = 'BUST!';
+        document.getElementById('dealer-score').style.color = 'red';
+        document.getElementById('message').textContent = "YOU WON!!!";
+    } else if (you.score > dealer.score) {
+        document.getElementById('message').textContent = "YOU WON!!!";
+    } else if (you.score < dealer.score) {
+        document.getElementById('message').textContent = "YOU LOST!!!";
+    } else {
+        document.getElementById('message').textContent = "IT`S A DRAW!";
+    }
+ 
 }
  /**Start over */
 
 function buttonDeal() {
+
+    document.getElementById('stand').disabled = false;
+
     you.score = 0;
     let score = you.score;
     document.getElementById('you-score').textContent = score;
@@ -77,14 +110,18 @@ function buttonDeal() {
     let score1 = dealer.score;
     document.getElementById('dealer-score').textContent = score1;
 
+    document.getElementById('message').textContent = "GOOD LUCK!!!";
 
     let images = document.getElementById('main').querySelectorAll('img');
         for(let i=0; i<= images.length; i++) {
             images[i].remove();
         }
-        
+
+    
 }
-console.log(dealer.score);
+
+
+
 document.getElementById('hit').addEventListener('click', showCard);
 document.getElementById('stand').addEventListener('click', buttonStand);
 document.getElementById('deal').addEventListener('click', buttonDeal);
