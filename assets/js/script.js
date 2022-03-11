@@ -10,36 +10,38 @@ let dealer = {
  * by pressing button 'hit'*/
 
 function showCard() {
-    let number = Math.floor(Math.random()* 13) + 1;
+    let number = 1;//Math.floor(Math.random()* 13) + 1;
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
     document.getElementById('you-main').appendChild(image);
-    let randomNumber = cardValue(number);console.log(randomNumber);
+    let randomNumber = cardValue(number);
 }
 
 //Cards over 10 value = 10
 function cardValue(randomNumber) {
-  
+
         if(randomNumber > 10) {
             randomNumber = 10;
             let num = showScore(randomNumber);
-            showScore(randomNumber)
         } else {
             let num = showScore(randomNumber);
-            showScore(randomNumber);
         }
 }
 //Show players score
 
 function showScore(num) {
+    
+    //if(num === 1) {
     you.score += num;
     let score = you.score;
-   
-    if(num === 1) {
 
-        score += 10;
+    score += 10;
+    
+    document.getElementById('you-score').textContent = score;
+    
+    console.log(score)
 
-            if(score >= 21) {
+        /*    if(score >= 21) {
                 score += 0;
                 document.getElementById('you-score').textContent = score;
             } else {
@@ -56,6 +58,7 @@ function showScore(num) {
             } else {
                 document.getElementById('you-score').textContent = score;
             }
+       }*/
 }
 
 /**Button 'Stand' changes active players from 'you' to 'dealer'*/
@@ -86,6 +89,8 @@ function dealercards(num) {
 
     dealer.score += num;
     let score = dealer.score;
+
+
         if(17 > score ) {
         buttonStand ()
     }else {
