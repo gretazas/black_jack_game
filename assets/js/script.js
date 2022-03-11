@@ -22,21 +22,17 @@ function showCard() {
 }
 
 function cardValue() {
-    let card = this.number;
-
-        if(card > 10) {
-            card = 10;
-            
-        } else {
-            let card = this.number;
+  
+        if(this.number > 10) {
+            number = 10;
         }
-     console.log(card);
+
     showScore();
 }
 //Show players score
 
 function showScore() {
-    you.score += this.card;
+    you.score += this.number;
     let score = you.score;
     document.getElementById('you-score').textContent = score;
 }
@@ -47,13 +43,21 @@ function buttonStand () {
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
     document.getElementById('dealer-main').appendChild(image);
-    dealercards();
+    dealerCardValue();
 }
 
+function dealerCardValue() {
+  
+    if(this.number > 10) {
+        number = 10;
+    }
+
+    dealercards() 
+}
 //Show dealers score
 
 function dealercards() {
-    dealer.score += this.card;
+    dealer.score += this.number;
     let score = dealer.score;
         if(17 > score ) {
         buttonStand ()
