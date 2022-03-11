@@ -26,6 +26,8 @@ function cardValue() {
   
         if(this.number > 10) {
             number = 10;
+        } else {
+            this.number
         }
 
     showScore();
@@ -36,7 +38,14 @@ function showScore() {
     you.score += this.number;
     let score = you.score;
     document.getElementById('you-score').textContent = score;
-    winnerLoser()
+    if(you.score >= 21) {
+        document.getElementById('you-score').textContent = 'BUST!';
+        document.getElementById('you-score').style.color = 'red';
+        document.getElementById('message').textContent = "YOU LOST!!!";
+    } else {
+        winnerLoser();
+    }
+    
 }
 
 /**Button 'Stand' changes active players from 'you' to 'dealer'*/
@@ -63,7 +72,6 @@ function dealerCardValue() {
 
 function dealercards() {
     
-
     dealer.score += this.number;
     let score = dealer.score;
         if(17 > score ) {
@@ -121,8 +129,6 @@ function buttonDeal() {
 
     
 }
-
-
 
 document.getElementById('hit').addEventListener('click', showCard);
 document.getElementById('stand').addEventListener('click', buttonStand);
