@@ -36,6 +36,7 @@ function showScore() {
     you.score += this.number;
     let score = you.score;
     document.getElementById('you-score').textContent = score;
+    winnerLoser()
 }
 
 /**Button 'Stand' changes active players from 'you' to 'dealer'*/
@@ -78,6 +79,7 @@ function dealercards() {
 
 function winnerLoser() {
 
+if(document.getElementById('stand').disabled){
 
     if(you.score >= 21) {
         document.getElementById('you-score').textContent = 'BUST!';
@@ -93,8 +95,8 @@ function winnerLoser() {
         document.getElementById('message').textContent = "YOU LOST!!!";
     } else {
         document.getElementById('message').textContent = "IT`S A DRAW!";
-    }
- 
+    };
+  };
 }
  /**Start over */
 
