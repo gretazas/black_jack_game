@@ -10,29 +10,32 @@ let dealer = {
  * by pressing button 'hit'*/
 
 function showCard() {
-    number = Math.floor(Math.random()* 13) + 1;
+    let number = Math.floor(Math.random()* 13) + 1;
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
     document.getElementById('you-main').appendChild(image);
-    cardValue();
+    let randomNumber = cardValue(number);console.log(randomNumber);
 }
 
 //Cards over 10 value = 10
-function cardValue() {
+function cardValue(randomNumber) {
   
-        if(this.number > 10) {
-            number = 10;
+        if(randomNumber > 10) {
+            randomNumber = 10;
+            let num = showScore(randomNumber);
+            showScore(randomNumber)
+        } else {
+            let num = showScore(randomNumber);
+            showScore(randomNumber);
         }
-
-    showScore();
 }
 //Show players score
 
-function showScore() {
-    you.score += this.number;
+function showScore(num) {
+    you.score += num;
     let score = you.score;
    
-    if(1 === this.number) {
+    if(num === 1) {
 
         score += 10;
 
@@ -57,31 +60,31 @@ function showScore() {
 
 /**Button 'Stand' changes active players from 'you' to 'dealer'*/
 function buttonStand () {
-    number = Math.floor(Math.random()* 13) +1         ;
+    let number = Math.floor(Math.random()* 13) +1         ;
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
     document.getElementById('dealer-main').appendChild(image);
     document.getElementById('stand').disabled = true;
     
-    dealerCardValue();
+    let randomNumber = dealerCardValue(number);
     winnerLoser();
 }
 
 //Cards over 10 value = 10
-function dealerCardValue() {
+function dealerCardValue(randomNumber) {
   
-    if(this.number > 10) {
-        number = 10;
+    if(randomNumber > 10) {
+        randomNumber = 10;
     }
 
-    dealercards() 
+    let num = dealercards(randomNumber);
 }
 //Show dealers score
 
-function dealercards() {
+function dealercards(num) {
     
 
-    dealer.score += this.number;
+    dealer.score += num;
     let score = dealer.score;
         if(17 > score ) {
         buttonStand ()
