@@ -48,15 +48,15 @@ function showScore(num) {
 
                 } else if (score + 10 < 21) {
 
-                    score += 10
-                    you.score += score ;   console.log(score, '+10');  
+                    score + 10;
+                    you.score += score ;   
                     document.getElementById('you-score').textContent = score; 
-            
+            console.log(score, '+10');  
                 } else {
 
-                    score - 10;            console.log(score, '-10');
+                    score - 10;           
                     you.score += score; 
-                    document.getElementById('you-score').textContent = score;
+                    document.getElementById('you-score').textContent = score; console.log(score, '-10');
                 }            
                
  
@@ -66,17 +66,15 @@ function showScore(num) {
                 if(score >= 21) {
 
                                               console.log(score,'>=21');
-
-                    //console.log(num); console.log(score);
                     document.getElementById('you-score').textContent = 'BUST!';
                     document.getElementById('you-score').style.color = 'red';
                     document.getElementById('message').textContent = "YOU LOST!!!"; 
 
                 } else {
 
-                you.score += score;    
+                you.score = score;    
                 document.getElementById('you-score').textContent = score;                            
-                                
+                          console.log( score, 'score')      
                 
                 
                 }
@@ -86,7 +84,8 @@ function showScore(num) {
 /**Button 'Stand' changes active players from 'you' to 'dealer'*/
 
 function buttonStand (score) {
-    
+
+    document.getElementById('hit').disabled = true;
     document.getElementById('stand').disabled = true;
     
     if (score > 17) {
@@ -161,8 +160,6 @@ console.log('dealerscore >= 21')
                     document.getElementById('dealer-score').style.color = 'red';
                     document.getElementById('message').textContent = "YOU WON!!!";
 
-                    buttonStand (score);
-
                 } else {
 console.log('dealerscore')
                     dealer.score = score;     
@@ -184,9 +181,9 @@ function winnerLoser() {
         document.getElementById('dealer-score').style.color = 'red';
         document.getElementById('message').textContent = "YOU WON!!!";
     } else if (you.score > dealer.score) {
-        document.getElementById('message').textContent = "YOU WON!!!";
+        document.getElementById('message').textContent = "YOU WON!!!"; console.log(you.score, "you", dealer.score, "dealer");
     } else if (you.score < dealer.score) {
-        document.getElementById('message').textContent = "YOU LOST!!!";
+        document.getElementById('message').textContent = "YOU LOST!!!"; console.log(you.score, dealer.score);
     } else {
         document.getElementById('message').textContent = "IT`S A DRAW!";
     }
@@ -196,7 +193,11 @@ function winnerLoser() {
 
 function buttonDeal() {
 
+    document.getElementById('you-score').style.color = 'black';
+    document.getElementById('dealer-score').style.color = 'black';
+
     document.getElementById('stand').disabled = false;
+    document.getElementById('hit').disabled = false;
 
     you.score = 0;
     let score = you.score;
@@ -213,8 +214,7 @@ function buttonDeal() {
             images[i].remove();
         }
 
-    document.getElementById('you-score').style.color = 'black';
-    document.getElementById('dealer-score').style.color = 'black';    
+       
 }
 
 

@@ -1,9 +1,10 @@
 body {
-    background-color: rgb(94, 184, 94);
+    background-color: rgb(130, 214, 119);
     display: flex;
     flex-direction: column;
     padding: 50px;
     align-items: center;
+    border-radius: 20px;
 }
 
 .play-area {
@@ -18,6 +19,8 @@ body {
 }
 
 #main {
+    background-color: rgb(67, 163, 67);
+    border-radius: 20px;
     display: flex;
     width: 80%;
     align-items: center;
@@ -30,7 +33,7 @@ button {
     margin: 20px;
 }
 
-#you-score, #dealer-score {
+#you-score, #dealer-score  {
     height: 40px;
     background-color: rgb(130, 214, 119);
     width: 50px;
@@ -39,6 +42,10 @@ button {
     text-align: center ;
     padding: 5px;
     border-radius: 10px;
+}
+
+#dealer-score {
+    top: -90px;
 }
 
 #you-main, #dealer-main {
@@ -59,4 +66,10 @@ button {
 img {
     height: 100%;
     margin: 20px;
+    border-radius: 5px;
+}
+
+img:hover {
+    transform: scale(1.1);
+    background-color: rgb(151, 248, 230);
 }
