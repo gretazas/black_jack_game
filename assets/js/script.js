@@ -135,7 +135,7 @@ console.log(' ACEdealerscore >= 21');
                 } else if (score + 10 < 21) {
 console.log('ACEdealerscore += 10');
                     score += 10
-                    dealer.score += score ;   
+                    dealer.score = score ;   
                     document.getElementById('dealer-score').textContent = score; 
 
                     buttonStand (score);
