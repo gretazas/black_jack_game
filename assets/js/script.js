@@ -215,13 +215,13 @@ function winnerLoser() {
 // Count wins and losses 
 
 function wins() {console.log('WIN');
-    let oldScore = parseInt(getElementById('win-score').textContent);
-    document.getElementById('win-score').innerText = ++oldScore;
+    let oldScore = parseInt(document.getElementById('win-score').textContent);
+    document.getElementById('win-score').textContent = ++oldScore;
 }
 
 function losses() {console.log('LOSS');
-    let oldScore = parseInt(getElementById('loss-score').textContent);
-    document.getElementById('loss-score').innerText = ++oldScore;
+    let oldScore = parseInt(document.getElementById('loss-score').textContent);
+    document.getElementById('loss-score').textContent = ++oldScore;
 }
 
  /**Start over */                          
