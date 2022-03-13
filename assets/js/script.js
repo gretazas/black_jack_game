@@ -10,7 +10,7 @@ let dealer = {
  * by pressing button 'hit'*/
 
 function showCard() {
-    let number = 1;//Math.floor(Math.random()* 13) + 1;
+    let number = Math.floor(Math.random()* 13) + 1;
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
     document.getElementById('you-main').appendChild(image);
@@ -45,12 +45,13 @@ function showScore(num) {
                     document.getElementById('you-score').textContent = 'BUST!';
                     document.getElementById('you-score').style.color = 'red';
                     document.getElementById('message').textContent = "YOU LOST!!!";
+                    losses();
                     document.getElementById('hit').disabled = true;
                     document.getElementById('stand').disabled = true;   
 
                 } else if (score + 10 < 21) {
 
-                    score + 10;
+                    score += 10;
                     you.score = score ;   
                     document.getElementById('you-score').textContent = score; 
             console.log(score, '+10');  
@@ -71,6 +72,7 @@ function showScore(num) {
                     document.getElementById('you-score').textContent = 'BUST!';
                     document.getElementById('you-score').style.color = 'red';
                     document.getElementById('message').textContent = "YOU LOST!!!"; 
+                    losses();
                     document.getElementById('hit').disabled = true;
                     document.getElementById('stand').disabled = true;
 
@@ -94,7 +96,7 @@ function buttonStand (score) {
     
     if (score > 17) {
 
-        winnerLoser();
+    winnerLoser();
 
     } else {
 
@@ -134,6 +136,7 @@ console.log(' ACEdealerscore >= 21');
                     document.getElementById('dealer-score').textContent = 'BUST!';
                     document.getElementById('dealer-score').style.color = 'red';
                     document.getElementById('message').textContent = "YOU WON!!!";
+                    wins();
                     document.getElementById('hit').disabled = true;
                     document.getElementById('stand').disabled = true;
 
@@ -165,6 +168,7 @@ console.log('dealerscore >= 21')
                     document.getElementById('dealer-score').textContent = 'BUST!';
                     document.getElementById('dealer-score').style.color = 'red';
                     document.getElementById('message').textContent = "YOU WON!!!";
+                    wins();
                     document.getElementById('hit').disabled = true;
                     document.getElementById('stand').disabled = true;
                 } else {
@@ -187,14 +191,17 @@ function winnerLoser() {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
         document.getElementById('message').textContent = "YOU WON!!!";
+        wins();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else if (you.score > dealer.score) {
         document.getElementById('message').textContent = "YOU WON!!!"; console.log(you.score, "you", dealer.score, "dealer");
+        wins();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else if (you.score < dealer.score) {
         document.getElementById('message').textContent = "YOU LOST!!!"; console.log(you.score, dealer.score);
+        losses();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else {
@@ -204,6 +211,19 @@ function winnerLoser() {
     }
                                    
 } 
+
+// Count wins and losses 
+
+function wins() {console.log('WIN');
+    let oldScore = parseInt(getElementById('win-score').textContent);
+    document.getElementById('win-score').innerText = ++oldScore;
+}
+
+function losses() {console.log('LOSS');
+    let oldScore = parseInt(getElementById('loss-score').textContent);
+    document.getElementById('loss-score').innerText = ++oldScore;
+}
+
  /**Start over */                          
 
 function buttonDeal() {
