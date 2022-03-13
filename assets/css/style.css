@@ -52,6 +52,7 @@ button {
     display: flex;
     height: 30%;
     width: 20%;
+    justify-content: space-evenly;
 }
 
 #buttons {
