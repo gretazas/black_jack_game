@@ -10,6 +10,8 @@ let dealer = {
  * by pressing button 'hit'*/
 
 function showCard() {
+    const click = new Audio('assets/sounds/click.mp3');
+    click.play();
     let number = Math.floor(Math.random()* 13) + 1;
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
@@ -215,11 +217,16 @@ function winnerLoser() {
 // Count wins and losses 
 
 function wins() {console.log('WIN');
+    const harp = new Audio('assets/sounds/harp .wav');
+    harp.play();
     let oldScore = parseInt(document.getElementById('win-score').textContent);
     document.getElementById('win-score').textContent = ++oldScore;
 }
 
 function losses() {console.log('LOSS');
+    
+    const glassBreaking = new Audio('assets/sounds/glassbreaking.wav');
+    glassBreaking.play();
     let oldScore = parseInt(document.getElementById('loss-score').textContent);
     document.getElementById('loss-score').textContent = ++oldScore;
 }
@@ -230,6 +237,9 @@ function buttonDeal() {
 
     document.getElementById('you-score').style.color = 'black';
     document.getElementById('dealer-score').style.color = 'black';
+    const gongSound = new Audio('assets/sounds/gong.wav');
+    gongSound.play();
+    
 
     document.getElementById('stand').disabled = false;
     document.getElementById('hit').disabled = false;
