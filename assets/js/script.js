@@ -35,8 +35,6 @@ function cardValue(randomNumber) {
 
 function showScore(num) { 
 
-    //console.log(num);
-
         if(num === 1) {
 
             let score = you.score + num;
@@ -114,6 +112,7 @@ function buttonStand (score) {
 }
 
 //Cards over 10 value = 10
+
 function dealerCardValue(randomNumber) {
   
     if(randomNumber > 10) {
@@ -124,6 +123,7 @@ function dealerCardValue(randomNumber) {
     }
     
 }
+
 //Show dealers score                
 
 function dealercards(num) {
@@ -261,8 +261,6 @@ function buttonDeal() {
 
        
 }
-
-
 
 document.getElementById('stand').addEventListener('click', buttonStand);
 document.getElementById('deal').addEventListener('click', buttonDeal);
