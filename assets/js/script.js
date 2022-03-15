@@ -304,3 +304,17 @@ function buttonDeal() {
 document.getElementById('stand').addEventListener('click', buttonStand);
 document.getElementById('deal').addEventListener('click', buttonDeal);
 document.getElementById('hit').addEventListener('click', showCard);
+
+
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+    
+    document.getElementById('deal-button').remove();
+    document.getElementById('buttons').innerHTML += `<button id="deal" type="button" class="btn btn-danger btn-lg">Deal</button>`;
+    document.getElementById('win-tables').style.bottom= "-20px;"
+    } 
+  }
+  
+  var x = window.matchMedia("(max-width: 650px)")
+  myFunction(x) // Call listener function at run time
+  x.addListener(myFunction) // Attach listener function on state changes
