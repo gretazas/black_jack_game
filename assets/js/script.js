@@ -38,36 +38,48 @@ function showScore(num) {
 
     if (num === 1) {
 
-        let score = you.score + num;
-
-        if (score >= 21) {
-
-
-            document.getElementById('you-score').textContent = 'BUST!';
-            document.getElementById('you-score').style.color = 'red';
-            document.getElementById('message').textContent = "YOU LOST!!!";
-            losses();
-            document.getElementById('hit').disabled = true;
-            document.getElementById('stand').disabled = true;
-
-        } else if (score + 10 < 21) {
-
-            score += 10;
-            you.score = score;
-            document.getElementById('you-score').textContent = score;
-            console.log(score, '+10');
-        } else {
-
-            score - 10;
-            you.score = score;
-            document.getElementById('you-score').textContent = score;
-            console.log(score, '-10');
-        }
-
-
+        decideScoreWithAce1(num);
 
     } else {
-        let score = you.score + parseInt(`${num}`);
+        decideScore1(num);
+    }
+}
+
+//Decide players score and message along with it
+
+function decideScoreWithAce1(num) {
+    
+    let score = you.score + num;
+
+    if (score >= 21) {
+
+
+        document.getElementById('you-score').textContent = 'BUST!';
+        document.getElementById('you-score').style.color = 'red';
+        document.getElementById('message').textContent = "YOU LOST!!!";
+        losses();
+        document.getElementById('hit').disabled = true;
+        document.getElementById('stand').disabled = true;
+
+    } else if (score + 10 < 21) {
+
+        score += 10;
+        you.score = score;
+        document.getElementById('you-score').textContent = score;
+        console.log(score, '+10');
+    } else {
+
+        score - 10;
+        you.score = score;
+        document.getElementById('you-score').textContent = score;
+        console.log(score, '-10');
+    }
+
+}
+
+function decideScore1(num) {
+
+    let score = you.score + parseInt(`${num}`);
         console.log(score);
         if (score >= 21) {
 
@@ -87,7 +99,6 @@ function showScore(num) {
 
 
         }
-    }
 }
 
 /**Button 'Stand' changes active players from 'you' to 'dealer'*/
@@ -135,42 +146,57 @@ function dealercards(num) {
 
     if (num === 1) {
 
-        let score = dealer.score + num;
-
-        if (score >= 21) {
-            console.log(' ACEdealerscore >= 21');
-            document.getElementById('dealer-score').textContent = 'BUST!';
-            document.getElementById('dealer-score').style.color = 'red';
-            document.getElementById('message').textContent = "YOU WON!!!";
-            wins();
-            document.getElementById('hit').disabled = true;
-            document.getElementById('stand').disabled = true;
-
-        } else if (score + 10 < 21) {
-            console.log('ACEdealerscore += 10');
-            score += 10
-            dealer.score = score;
-            document.getElementById('dealer-score').textContent = score;
-
-            buttonStand(score);
-
-        } else {
-            console.log('ACEdealerscore - 10;');
-
-            dealer.score += score;
-            document.getElementById('dealer-score').textContent = score;
-
-            buttonStand(score);
-
-        }
-
+        decideScoreWithAce(num);
 
     } else {
 
-        let score = dealer.score + parseInt(`${num}`);
-        console.log(dealer.score, 'dealer.score');
-        console.log(num, 'num');
-        console.log(score, 'score');
+        decideScore(num);
+        
+    }
+
+}
+
+//Decide dealers score and message along with it
+
+function decideScoreWithAce(num) {
+
+    let score = dealer.score + num;  
+
+if (score >= 21) {
+    console.log(' ACEdealerscore >= 21');
+    document.getElementById('dealer-score').textContent = 'BUST!';
+    document.getElementById('dealer-score').style.color = 'red';
+    document.getElementById('message').textContent = "YOU WON!!!";
+    wins();
+    document.getElementById('hit').disabled = true;
+    document.getElementById('stand').disabled = true;
+
+} else if (score + 10 < 21) {
+    console.log('ACEdealerscore += 10');
+    score += 10
+    dealer.score = score;
+    document.getElementById('dealer-score').textContent = score;
+
+    buttonStand(score);
+
+} else {
+    console.log('ACEdealerscore - 10;');
+
+    dealer.score += score;
+    document.getElementById('dealer-score').textContent = score;
+
+    buttonStand(score);
+
+  }
+}
+
+function decideScore(num) {
+
+    let score = dealer.score + parseInt(`${num}`);
+    console.log(dealer.score, 'dealer.score');
+    console.log(num, 'num');
+    console.log(score, 'score');
+
         if (score >= 21) {
 
             console.log('dealerscore >= 21')
@@ -188,9 +214,8 @@ function dealercards(num) {
             buttonStand(score);
 
         }
-    }
-
 }
+
 
 //Decide who is the Winner
 
