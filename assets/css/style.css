@@ -34,6 +34,7 @@ button {
 }
 
 #you-score, #dealer-score  {
+    justify-content: space-around;
     height: 40px;
     background-color: rgb(130, 214, 119);
     width: 50px;
@@ -98,9 +99,12 @@ img:hover {
 }
 
 @media only screen and (max-width: 650px) {
+    h1 {
+        font-size: 2rem;
+    }
     .play-area {
         flex-direction: row;
-        height: 180px;
+        height: 140px;
         align-items: flex-end;      
         justify-content: flex-start;
         width: 30px;
@@ -122,29 +126,46 @@ img:hover {
         align-items: center;
         flex-direction: row;
         position: relative;
-        bottom: -300px;
+        top: -170px;
     }
 
     #you-score, #dealer-score {
-        height: 40px;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        height: 50px;
         background-color: rgb(130, 214, 119);
         width: 50px;
         position: relative;
-        top: -100px;
         padding: 15px;
         border-radius: 10px;
+        font-size: 12px;
     }
    
     img {
-        margin: 2px;;
+        margin: 2px;
+        background-color: white;
     }
 
     #you-main, #dealer-main {
         justify-content: flex-start;
+        height: 80px;
+        width: 50px;
     }
 
     #win-tables {
         margin: 20px;
+    }
+
+    #wins, #losses {
+        align-items: flex-end;
+        height: 150px;
+    }
+
+    #win-score, #loss-score {
+        display: flex;
+        align-items: flex-end;
+        padding: 0px 20px 0px 20px;
     }
 
 }
