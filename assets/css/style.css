@@ -7,6 +7,8 @@ body {
     border-radius: 20px;
 }
 
+/*Players and dealers displayed card`s field*/
+
 .play-area {
     display: flex;
     flex-direction: column;
@@ -17,6 +19,8 @@ body {
     height: 500px;
     margin: auto;
 }
+
+/*Contains players and dealers play areas*/
 
 #main {
     background-color: rgb(67, 163, 67);
@@ -32,6 +36,8 @@ body {
 button {
     margin: 20px;
 }
+
+/*Displays scores*/
 
 #you-score, #dealer-score  {
     justify-content: space-around;
@@ -49,12 +55,16 @@ button {
     top: -90px;
 }
 
+/*Displays cards*/
+
 #you-main, #dealer-main {
     display: flex;
     height: 30%;
     width: 20%;
     justify-content: space-evenly;
 }
+
+/*Displays buttons*/
 
 #buttons {
     display: flex;
@@ -75,6 +85,8 @@ img:hover {
     transform: scale(1.1);
     background-color: rgb(151, 248, 230);
 }
+
+/*Displays total count of wins and losses*/
 
 #wins, #losses {
     justify-content: flex-start;
@@ -97,6 +109,8 @@ img:hover {
 #loss-score, #win-score {
     padding: 15px;
 }
+
+/*@media screen max-width 650px*/
 
 @media only screen and (max-width: 650px) {
     h1 {
