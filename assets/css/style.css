@@ -118,7 +118,7 @@ img:hover {
     }
     .play-area {
         flex-direction: row;
-        height: 140px;
+        height: 100px;
         align-items: flex-end;      
         justify-content: flex-start;
         width: 30px;
