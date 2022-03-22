@@ -39,6 +39,12 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 ## This page is for people who would like to relax and take a moment away from their routine to have a little fun and play a bit of Black Jack against the bot.
 
 
+
+<p align="center">
+  <img width="460" height="300" src="assets/images/responsive.png" alt="Responsive design picture">
+</p>
+
+
 ### Built with intention to practise use:
 
 
