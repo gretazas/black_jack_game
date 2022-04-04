@@ -90,6 +90,24 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 
  * [python3terminator](https://www.python.org/download/releases/3.0/)
 
+
+ # Proved by:
+
+ <p>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
+       <p>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!" />
+    </a>
+</p>
+
 # Frameworks, Libraries & Programs I Used:
 
 [Hover.css:](https://ianlunn.github.io/Hover/)

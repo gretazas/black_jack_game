@@ -279,7 +279,7 @@ function losses() {
     const glassBreaking = new Audio('assets/sounds/glassbreaking.wav');
     glassBreaking.play();
     let oldScore = parseInt(document.getElementById('loss-score').textContent);
-    document.getElementById('loss-score').textContent = ++oldScore;
+    losses = document.getElementById('loss-score').textContent = ++oldScore;
 }
 
 /**Start over */
@@ -320,4 +320,27 @@ document.getElementById('stand').addEventListener('click', buttonStand);
 document.getElementById('deal').addEventListener('click', buttonDeal);
 document.getElementById('hit').addEventListener('click', showCard);
 
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
 
+function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Wins',     11],
+        ['Losses',      2],
+        ['Draws',  2],
+    ]);
+
+    var options = {
+        'legend': { position: 'bottom'},
+        'chartArea':{left:130,top:0,width:"50%",height:"50%"},
+        'height': 100,
+        'width': 500, 
+        'backgroundColor': 'rgb(50, 168, 82)',
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+    chart.draw(data, options);
+}
