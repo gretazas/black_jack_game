@@ -88,7 +88,7 @@ img:hover {
 
 /*Displays total count of wins and losses*/
 
-#wins, #losses {
+#wins, #losses, #draws{
     justify-content: flex-start;
     align-items: center;
     width: 200px;
@@ -106,7 +106,7 @@ img:hover {
     background-color: rgb(72, 145, 96);
 }
 
-#loss-score, #win-score {
+#loss-score, #win-score, #draw-score{
     padding: 15px;
 }
 
@@ -119,11 +119,11 @@ img:hover {
 #piechart {
     position: absolute;
     top: 800px;
-    left: 355px;
+    left: 700px;
 }
-/*@media screen max-width 650px*/
+/*@media screen max-width 950px*/
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 950px) {
     h1 {
         font-size: 2rem;
     }
@@ -147,11 +147,6 @@ img:hover {
     }
     #buttons {
         display: flex;
-        align-content: center;
-        align-items: center;
-        flex-direction: row;
-        position: relative;
-        top: -170px;
     }
 
     #you-score, #dealer-score {
@@ -183,12 +178,12 @@ img:hover {
         margin: 20px;
     }
 
-    #wins, #losses {
+    #wins, #losses, #draws {
         align-items: flex-end;
         height: 150px;
     }
 
-    #win-score, #loss-score {
+    #win-score, #loss-score, #draw-score {
         display: flex;
         align-items: flex-end;
         padding: 0px 20px 0px 20px;

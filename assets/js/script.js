@@ -5,22 +5,26 @@ let you = {
 let dealer = {
     'score': 0,
 }
+/* Change @media screens max-width 950px*/
 
-//Style: change button position @media screen max-with 650px
+const mediaQuery = window.matchMedia('(max-width: 950px)');
 
-function myFunction(x) {
-    if (x.matches) {
-    document.body.appendChild(document.getElementById('buttons'));
-    document.getElementById('deal-button').remove('button');
-    document.getElementById('buttons').innerHTML += `<button id="deal" type="button" class="btn btn-danger btn-lg">Deal</button>`;
-    document.getElementById('win-tables').style.bottom= "-20px;"
-    } 
+function handleTabletChange(e) {
+    if (e.matches) {
+        document.getElementById('buttons').remove();
+        document.getElementById('deal').remove();
+        document.getElementById('deal-button').innerHTML += `
+        <button aria-label="Hit" id="hit" type="button" class="btn btn-success btn-lg" style="background-color:rgb(33, 142, 76)">Hit</button>
+        <button aria-label="Stand" id="stand" type="button" class="btn btn-warning btn-lg">Stand</button>
+        <button aria-label="Deal" id="deal" type="button" class="btn btn-danger btn-lg">Deal</button>
+        `;
+        
   }
-  
-  var x = window.matchMedia("(max-width: 650px)")
-  myFunction(x) 
-  x.addEventListener('click', myFunction);
+}
 
+mediaQuery.addListener(handleTabletChange)
+
+handleTabletChange(mediaQuery)
 /**Show random card 
  * by pressing button 'hit'*/
 
@@ -63,7 +67,7 @@ function showScore(num) {
 //Decide players score and message along with it
 
 function decideScoreWithAce1(num) {
-    
+
     let score = you.score + num;
 
     if (score >= 21) {
@@ -72,7 +76,7 @@ function decideScoreWithAce1(num) {
         document.getElementById('you-score').textContent = 'BUST!';
         document.getElementById('you-score').style.color = 'red';
         document.getElementById('message').textContent = "YOU LOST!!!";
-        losses();
+        lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
 
@@ -95,25 +99,22 @@ function decideScoreWithAce1(num) {
 function decideScore1(num) {
 
     let score = you.score + parseInt(`${num}`);
-        console.log(score);
-        if (score >= 21) {
 
-            console.log(score, '>=21');
-            document.getElementById('you-score').textContent = 'BUST!';
-            document.getElementById('you-score').style.color = 'red';
-            document.getElementById('message').textContent = "YOU LOST!!!";
-            losses();
-            document.getElementById('hit').disabled = true;
-            document.getElementById('stand').disabled = true;
+    if (score >= 21) {
+        document.getElementById('you-score').textContent = 'BUST!';
+        document.getElementById('you-score').style.color = 'red';
+        document.getElementById('message').textContent = "YOU LOST!!!";
+        lossesNum();
+        document.getElementById('hit').disabled = true;
+        document.getElementById('stand').disabled = true;
 
-        } else {
+    } else {
 
-            you.score = score;
-            document.getElementById('you-score').textContent = score;
-            console.log(score, 'score')
+        you.score = score;
+        document.getElementById('you-score').textContent = score;
 
 
-        }
+    }
 }
 
 /**Button 'Stand' changes active players from 'you' to 'dealer'*/
@@ -166,7 +167,7 @@ function dealercards(num) {
     } else {
 
         decideScore(num);
-        
+
     }
 
 }
@@ -175,34 +176,30 @@ function dealercards(num) {
 
 function decideScoreWithAce(num) {
 
-    let score = dealer.score + num;  
+    let score = dealer.score + num;
 
-if (score >= 21) {
-    console.log(' ACEdealerscore >= 21');
-    document.getElementById('dealer-score').textContent = 'BUST!';
-    document.getElementById('dealer-score').style.color = 'red';
-    document.getElementById('message').textContent = "YOU WON!!!";
-    wins();
-    document.getElementById('hit').disabled = true;
-    document.getElementById('stand').disabled = true;
+    if (score >= 21) {
+        document.getElementById('dealer-score').textContent = 'BUST!';
+        document.getElementById('dealer-score').style.color = 'red';
+        document.getElementById('message').textContent = "YOU WON!!!";
+        winsNum();
+        document.getElementById('hit').disabled = true;
+        document.getElementById('stand').disabled = true;
 
-} else if (score + 10 < 21) {
-    console.log('ACEdealerscore += 10');
-    score += 10
-    dealer.score = score;
-    document.getElementById('dealer-score').textContent = score;
+    } else if (score + 10 < 21) {
+        score += 10
+        dealer.score = score;
+        document.getElementById('dealer-score').textContent = score;
 
-    buttonStand(score);
+        buttonStand(score);
 
-} else {
-    console.log('ACEdealerscore - 10;');
+    } else {
+        dealer.score += score;
+        document.getElementById('dealer-score').textContent = score;
 
-    dealer.score += score;
-    document.getElementById('dealer-score').textContent = score;
+        buttonStand(score);
 
-    buttonStand(score);
-
-  }
+    }
 }
 
 function decideScore(num) {
@@ -212,82 +209,92 @@ function decideScore(num) {
     console.log(num, 'num');
     console.log(score, 'score');
 
-        if (score >= 21) {
+    if (score >= 21) {
+        document.getElementById('dealer-score').textContent = 'BUST!';
+        document.getElementById('dealer-score').style.color = 'red';
+        document.getElementById('message').textContent = "YOU WON!!!";
+        winsNum();
+        document.getElementById('hit').disabled = true;
+        document.getElementById('stand').disabled = true;
+    } else {
+        dealer.score = score;
+        document.getElementById('dealer-score').textContent = score;
 
-            console.log('dealerscore >= 21')
-            document.getElementById('dealer-score').textContent = 'BUST!';
-            document.getElementById('dealer-score').style.color = 'red';
-            document.getElementById('message').textContent = "YOU WON!!!";
-            wins();
-            document.getElementById('hit').disabled = true;
-            document.getElementById('stand').disabled = true;
-        } else {
-            console.log('dealerscore')
-            dealer.score = score;
-            document.getElementById('dealer-score').textContent = score;
+        buttonStand(score);
 
-            buttonStand(score);
-
-        }
+    }
 }
 
 
 //Decide who is the Winner
 
 function winnerLoser() {
-    console.log('what?')
     if (dealer.score >= 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
         document.getElementById('message').textContent = "YOU WON!!!";
-        wins();
+        winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else if (you.score > dealer.score) {
         document.getElementById('message').textContent = "YOU WON!!!";
-        console.log(you.score, "you", dealer.score, "dealer");
-        wins();
+        winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else if (you.score < dealer.score) {
         document.getElementById('message').textContent = "YOU LOST!!!";
-        console.log(you.score, dealer.score);
-        losses();
+        lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else {
         document.getElementById('message').textContent = "IT`S A DRAW!";
+        drawsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     }
 
 }
 
-// Count wins and losses 
+// Count wins, losses and draws
+let wins = 0;
+let losses = 0;
+let draws = 0;
+let numOfWins = wins;
+let numOfLosses = losses;
+let numOfDraws = draws;
 
-function wins() {
+
+function winsNum() {
     console.log('WIN');
     const harp = new Audio('assets/sounds/harp .wav');
     harp.play();
     let oldScore = parseInt(document.getElementById('win-score').textContent);
-    document.getElementById('win-score').textContent = ++oldScore;
+    wins += 1;
+    document.getElementById('win-score').textContent = wins;
+    drawChart();
 }
 
-function losses() {
+function lossesNum() {
     console.log('LOSS');
-
     const glassBreaking = new Audio('assets/sounds/glassbreaking.wav');
     glassBreaking.play();
     let oldScore = parseInt(document.getElementById('loss-score').textContent);
-    losses = document.getElementById('loss-score').textContent = ++oldScore;
+    losses += 1;
+    document.getElementById('loss-score').textContent = losses;
+    drawChart();
+}
+
+function drawsNum() {
+    console.log('DRAW');
+    let oldScore = parseInt(document.getElementById('draw-score').textContent);
+    draws += 1;
+    document.getElementById('draw-score').textContent = draws;
+    drawChart();
 }
 
 /**Start over */
 
 function buttonDeal() {
-
-
-
 
     document.getElementById('you-score').style.color = 'black';
     document.getElementById('dealer-score').style.color = 'black';
@@ -312,31 +319,40 @@ function buttonDeal() {
     cardContainers.forEach(container => {
         document.querySelector(container).innerHTML = '';
     });
-
-
 }
 
 document.getElementById('stand').addEventListener('click', buttonStand);
 document.getElementById('deal').addEventListener('click', buttonDeal);
 document.getElementById('hit').addEventListener('click', showCard);
 
-google.charts.load('current', {'packages':['corechart']});
+/* Google chart */ 
+
+google.charts.load('current', {
+    'packages': ['corechart']
+});
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
 
     var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
-        ['Wins',     11],
-        ['Losses',      2],
-        ['Draws',  2],
+        ['Status', 'Amount'],
+        ['Wins', wins],
+        ['Losses', losses],
+        ['Draws', draws]
     ]);
 
     var options = {
-        'legend': { position: 'bottom'},
-        'chartArea':{left:130,top:0,width:"50%",height:"50%"},
+        'legend': {
+            position: 'bottom'
+        },
+        'chartArea': {
+            left: 130,
+            top: 0,
+            width: "50%",
+            height: "50%"
+        },
         'height': 100,
-        'width': 500, 
+        'width': 500,
         'backgroundColor': 'rgb(50, 168, 82)',
     };
 
@@ -344,3 +360,4 @@ function drawChart() {
 
     chart.draw(data, options);
 }
+
