@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet");
 body {
+    font-family:  'Gothic A1', sans-serif;
     background-color: rgb(130, 214, 119);
     display: flex;
     flex-direction: column;
-    padding: 50px;
     align-items: center;
     border-radius: 20px;
 }
@@ -130,6 +131,57 @@ input {
     bottom: 10px;
     display: flex;
     align-items: center;
+    padding: 30px 530px;
+}
+
+.active {
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu a {
+    margin: 20px;
+    left: 0;
+}
+
+#JackMenu {
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+#JackMenu a {
+    margin: 5px;
+}
+
+#heading {
+    background-color: #c9bfc3;
+    margin: 40px 540px;
+    border: solid 2px black;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+li {
+    padding: 20px;
+}
+
+#links {
+    padding: 0 600px;
+}
+
+a {
+    color: black;
 }
 
 /*@media screen max-width 1560px*/
