@@ -51,10 +51,6 @@ button {
     border-radius: 10px;
 }
 
-#dealer-score {
-    top: -90px;
-}
-
 /*Displays cards*/
 
 #you-main, #dealer-main {
@@ -66,7 +62,7 @@ button {
 
 /*Displays buttons*/
 
-#buttons {
+.button-style {
     display: flex;
     align-content: center;
     align-items: center;
@@ -120,9 +116,25 @@ img:hover {
     position: relative;
     top: 830px;
 }
-/*@media screen max-width 950px*/
 
-@media only screen and (max-width: 950px) {
+input {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #945b7ed7;
+    border-radius: 5px;
+    height: 35px;
+    margin:10px;
+}
+
+#enter {
+    bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/*@media screen max-width 1560px*/
+
+@media only screen and (max-width: 1560px) {
     h1 {
         font-size: 2rem;
     }
@@ -144,7 +156,7 @@ img:hover {
         justify-content: flex-start;
         padding: 10px;;
     }
-    #buttons {
+    .button-style {
         display: flex;
     }
 

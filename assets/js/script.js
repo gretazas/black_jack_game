@@ -5,9 +5,9 @@ let you = {
 let dealer = {
     'score': 0,
 }
-/* Change @media screens max-width 950px*/
+/* Change @media screens max-width 1560px*/
 
-const mediaQuery = window.matchMedia('(max-width: 950px)');
+const mediaQuery = window.matchMedia('(max-width: 1560px)');
 document.getElementById('piechart').style.height = "75px";
 document.getElementById('piechart').style.width = "500px";
 document.getElementById('piechart').style.borderRadius = "50px";
@@ -15,6 +15,7 @@ document.getElementById('piechart').style.padding = "10px";
 
 function handleTabletChange(e) {
     if (e.matches) {
+        document.getElementById('computer-button').remove();
         document.getElementById('buttons').remove();
         document.getElementById('deal').remove();
         document.getElementById('deal-button').innerHTML += `
@@ -74,7 +75,7 @@ function decideScoreWithAce1(num) {
 
     let score = you.score + num;
 
-    if (score >= 21) {
+    if (score > 21) {
 
 
         document.getElementById('you-score').textContent = 'BUST!';
@@ -84,7 +85,7 @@ function decideScoreWithAce1(num) {
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
 
-    } else if (score + 10 < 21) {
+    } else if (score + 10 <= 21) {
 
         score += 10;
         you.score = score;
@@ -104,7 +105,7 @@ function decideScore1(num) {
 
     let score = you.score + parseInt(`${num}`);
 
-    if (score >= 21) {
+    if (score > 21) {
         document.getElementById('you-score').textContent = 'BUST!';
         document.getElementById('you-score').style.color = 'red';
         document.getElementById('message').textContent = "YOU LOST!!!";
@@ -182,7 +183,7 @@ function decideScoreWithAce(num) {
 
     let score = dealer.score + num;
 
-    if (score >= 21) {
+    if (score > 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
         document.getElementById('message').textContent = "YOU WON!!!";
@@ -190,7 +191,7 @@ function decideScoreWithAce(num) {
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
 
-    } else if (score + 10 < 21) {
+    } else if (score + 10 <= 21) {
         score += 10
         dealer.score = score;
         document.getElementById('dealer-score').textContent = score;
@@ -213,7 +214,7 @@ function decideScore(num) {
     console.log(num, 'num');
     console.log(score, 'score');
 
-    if (score >= 21) {
+    if (score > 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
         document.getElementById('message').textContent = "YOU WON!!!";
@@ -233,7 +234,7 @@ function decideScore(num) {
 //Decide who is the Winner
 
 function winnerLoser() {
-    if (dealer.score >= 21) {
+    if (dealer.score > 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
         document.getElementById('message').textContent = "YOU WON!!!";

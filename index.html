@@ -10,62 +10,36 @@
     <!-- Bootstrap link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <!-- Stylesheet  link -->
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    
-  </head>
-  <body>
-    <div id="piechart" style="width: 900px; height: 500px;"></div>
-    <title>Black Jack Game</title>
 </head>
+<body style="background-color: white">
+    <h1>Welcome</h1><br>
+    <h1>to the</h1><br>
+    <h1>Black Jack Game</h1>
 
-<body>
-
-    <header>
-        <h1 id="message">Good Luck!!!</h1>
-    </header>
-
-    <!-- Players div-->
-
-    <div id="main">
-        <div id="you" class="play-area">
-            <span id="you-score"></span>
-            <div id="you-main"></div>
-            <div id="buttons">
-                <button aria-label="Hit" id="hit" type="button" class="btn btn-success btn-lg" style="background-color:rgb(33, 142, 76)">Hit</button>
-                <button aria-label="Stand" id="stand" type="button" class="btn btn-warning btn-lg">Stand</button>
-            </div>
-        </div>
-
-        <!-- Dealers div -->
-
-        <div id="dealer" class="play-area">
-            <span id="dealer-score"></span>
-            <div id="dealer-main"></div>
-            <div style="height:110px">
-            </div>
-        </div>
-
+    <div>
+        <nav>
+            <ul>
+            <li>
+                <a href="https://crescent.edu/post/the-history-of-blackjack" target="_blank" rel="noopener" aria-label="Visit Origin of Black Jack Game (opens in a new tab)">Origin of Black Jack Game</a>
+            </li>
+            <li>
+                <a href="https://bicyclecards.com/how-to-play/blackjack/" target="_blank" rel="noopener" aria-label="Visit Rules of Black Jack Game (opens in a new tab)">Rules of Black Jack Game</a>
+            </li>
+            <li>
+                <a href="https://en.wikipedia.org/wiki/Possibility_theory" target="_blank" rel="noopener" aria-label="Visit Possibility theory (opens in a new tab)">Possibility theory</a>
+            </li>
+            <li>
+                <a href="https://github.com/gretazas/black_jack_game" target="_blank" rel="noopener" aria-label="Visit Readme page (opens in a new tab)">Readme Page</a>
+            </li>
+        </ul>
+        </nav>
     </div>
 
-    <div id="deal-button">
-    <button aria-label="Deal" id="deal" type="button" class="btn btn-danger btn-lg">Deal</button>
+    <div id="enter">
+        <h3>Enter your name: </h3>
+        <input id="name" type="text" name="name" placeholder="Enter name">
+        <button aria-label="Hit" id="hit" type="button" class="btn btn-success btn-lg" style="background-color:rgb(33, 142, 76)"><a href="game.html" style="color:black">Enter</a></button>
     </div>
-
-    <!--Total amonts of wins and losses-->
-
-    <div id="win-tables">
-        <div id="wins">Wins:<span id="win-score">0</span></div>
-        <div id="losses">Losses:<span id="loss-score">0</span></div>
-        <div id="draws">Draws:<span id="draw-score">0</span></div>
-    </div>
-    <div id="chart_wrap">
-    <div id="piechart" ></div>
-    </div>
-    <script src="assets/js/script.js"></script>
 </body>
-
-</html>
