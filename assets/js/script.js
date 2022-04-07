@@ -8,6 +8,10 @@ let dealer = {
 /* Change @media screens max-width 950px*/
 
 const mediaQuery = window.matchMedia('(max-width: 950px)');
+document.getElementById('piechart').style.height = "75px";
+document.getElementById('piechart').style.width = "500px";
+document.getElementById('piechart').style.borderRadius = "50px";
+document.getElementById('piechart').style.padding = "10px";
 
 function handleTabletChange(e) {
     if (e.matches) {
@@ -259,9 +263,6 @@ function winnerLoser() {
 let wins = 0;
 let losses = 0;
 let draws = 0;
-let numOfWins = wins;
-let numOfLosses = losses;
-let numOfDraws = draws;
 
 
 function winsNum() {

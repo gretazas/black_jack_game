@@ -117,9 +117,8 @@ img:hover {
     overflow: hidden;
 }
 #piechart {
-    position: absolute;
-    top: 800px;
-    left: 700px;
+    position: relative;
+    top: 830px;
 }
 /*@media screen max-width 950px*/
 
