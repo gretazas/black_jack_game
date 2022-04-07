@@ -118,20 +118,11 @@ img:hover {
     top: 830px;
 }
 
-input {
-    padding: 10px;
-    font-size: 18px;
-    border: 2px solid #945b7ed7;
-    border-radius: 5px;
-    height: 35px;
-    margin:10px;
-}
-
 #enter {
     bottom: 10px;
     display: flex;
     align-items: center;
-    padding: 30px 530px;
+    padding: 30px 930px;
 }
 
 .active {
@@ -187,6 +178,28 @@ a {
 /*@media screen max-width 1560px*/
 
 @media only screen and (max-width: 1560px) {
+    /*Styles for index.html*/
+    #container {
+        display: flex;
+        padding: 40px;
+    } 
+
+    #enter {
+        bottom: 10px;
+        padding: 50px;
+    }
+
+    #heading {
+        margin: 0;
+        padding: 25px;
+        width: 450px;
+    }
+
+    #links {
+        padding: 0;
+    }
+
+    /*Styles for game.html*/
     h1 {
         font-size: 2rem;
     }
