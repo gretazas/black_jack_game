@@ -107,6 +107,7 @@ img:hover {
     padding: 15px;
 }
 
+/*Google chart*/
 #chart_wrap {
     position: relative;
     padding-bottom: 100%;
@@ -125,23 +126,25 @@ img:hover {
     padding: 30px 930px;
 }
 
+/*Welcome page*/
 .active {
     border-bottom: 1px solid #3a3a3a;
 }
 
 .menu {
-    display: flex;
+    display: flex; 
+    left: 0;
 }
 
 .menu a {
     margin: 20px;
-    left: 0;
 }
 
 #JackMenu {
     left: 0;
     position: absolute;
     width: 100%;
+    padding-left: 30px;
 }
 
 #JackMenu a {
@@ -175,6 +178,13 @@ a {
     color: black;
 }
 
+/*@media screen max-width 650px*/
+@media only screen and (max-width: 650px) {
+    #win-tables {
+    width: 350px;
+    }
+}
+
 /*@media screen max-width 1560px*/
 
 @media only screen and (max-width: 1560px) {
@@ -187,6 +197,10 @@ a {
     #enter {
         bottom: 10px;
         padding: 50px;
+    }
+
+    .menu {
+        margin-left: 0;
     }
 
     #heading {
@@ -251,7 +265,9 @@ a {
     }
 
     #win-tables {
-        margin: 20px;
+        display: flex;
+        align-items: flex-end;
+        height: 100px;
     }
 
     #wins, #losses, #draws {
@@ -265,4 +281,14 @@ a {
         padding: 0px 20px 0px 20px;
     }
 
+    #piechart {
+        top: 690px;
+    }
+}
+
+@media only screen and (max-width: 2000px) and (min-width: 1560px){
+    
+    .menu {
+        margin-left: 230px;
+    }
 }

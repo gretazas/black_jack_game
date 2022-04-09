@@ -23,8 +23,8 @@ function handleTabletChange(e) {
         <button aria-label="Stand" id="stand" type="button" class="btn btn-warning btn-lg">Stand</button>
         <button aria-label="Deal" id="deal" type="button" class="btn btn-danger btn-lg">Deal</button>
         `;
-        
-  }
+
+    }
 }
 
 mediaQuery.addListener(handleTabletChange)
@@ -125,8 +125,6 @@ function decideScore1(num) {
 /**Button 'Stand' changes active players from 'you' to 'dealer'*/
 
 function buttonStand(score) {
-
-
 
     if (score > 17) {
 
@@ -327,7 +325,7 @@ document.getElementById('stand').addEventListener('click', buttonStand);
 document.getElementById('deal').addEventListener('click', buttonDeal);
 document.getElementById('hit').addEventListener('click', showCard);
 
-/* Google chart */ 
+/* Google chart */
 
 google.charts.load('current', {
     'packages': ['corechart']
@@ -362,4 +360,3 @@ function drawChart() {
 
     chart.draw(data, options);
 }
-
