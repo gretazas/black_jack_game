@@ -10,12 +10,11 @@ let dealer = {
 const mediaQuery = window.matchMedia('(max-width: 1560px)');
 document.getElementById('piechart').style.height = "75px";
 document.getElementById('piechart').style.width = "500px";
-document.getElementById('piechart').style.borderRadius = "50px";
-document.getElementById('piechart').style.padding = "10px";
+document.getElementById('piechart').style.padding = "30px";
 
 function handleTabletChange(e) {
     if (e.matches) {
-        document.getElementById('computer-button').remove();
+        document.getElementById('bot').remove();
         document.getElementById('buttons').remove();
         document.getElementById('deal').remove();
         document.getElementById('deal-button').innerHTML += `
@@ -33,15 +32,21 @@ handleTabletChange(mediaQuery)
 /**Show random card 
  * by pressing button 'hit'*/
 
-function showCard() {
+function showCard(you, dealer) {
     const click = new Audio('assets/sounds/click.mp3');
     click.play();
     let number = Math.floor(Math.random() * 13) + 1;
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
-    document.getElementById('you-main').appendChild(image);
 
-    cardValue(number);
+    if (you) {
+        document.getElementById('you-main').appendChild(image);
+        cardValue(number);
+    } else {
+        document.getElementById('dealer-main').appendChild(image);
+        dealerCardValue();
+    }
+    
 }
 
 //Cards over 10 value = 10
@@ -131,12 +136,7 @@ function buttonStand(score) {
         winnerLoser();
 
     } else {
-
-        let number = Math.floor(Math.random() * 13) + 1;
-        let image = document.createElement('img');
-        image.src = 'assets/images/' + `${number}` + '.png';
-        document.getElementById('dealer-main').appendChild(image);
-
+        showCard();
 
         dealerCardValue(number);
 
