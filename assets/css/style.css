@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet");
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap");
+
 body {
-    font-family:  'Gothic A1', sans-serif;
+    font-family: 'Gothic A1', sans-serif;
     background-color: rgb(130, 214, 119);
     display: flex;
     flex-direction: column;
@@ -40,21 +41,23 @@ button {
 
 /*Displays scores*/
 
-#you-score, #dealer-score  {
+#you-score,
+#dealer-score {
     justify-content: space-around;
     height: 40px;
     background-color: rgb(130, 214, 119);
     width: 50px;
     position: relative;
     top: -100px;
-    text-align: center ;
+    text-align: center;
     padding: 5px;
     border-radius: 10px;
 }
 
 /*Displays cards*/
 
-#you-main, #dealer-main {
+#you-main,
+#dealer-main {
     display: flex;
     height: 30%;
     width: 20%;
@@ -71,7 +74,7 @@ button {
     position: relative;
     bottom: -100px;
 }
- 
+
 img {
     height: 100%;
     margin: 20px;
@@ -85,25 +88,29 @@ img:hover {
 
 /*Displays total count of wins and losses*/
 
-#wins, #losses, #draws{
+#wins,
+#losses,
+#draws {
     justify-content: flex-start;
     align-items: center;
     width: 200px;
     height: 100px;
-    color:rgb(151, 248, 230);
-    display:flex;
+    color: rgb(151, 248, 230);
+    display: flex;
     padding: 10px;
-    
+
 }
 
 #win-tables {
-    display:flex;
+    display: flex;
     flex-direction: row;
     border-radius: 10px;
     background-color: rgb(72, 145, 96);
 }
 
-#loss-score, #win-score, #draw-score{
+#loss-score,
+#win-score,
+#draw-score {
     padding: 15px;
 }
 
@@ -114,10 +121,7 @@ img:hover {
     height: 0;
     overflow: hidden;
 }
-#piechart {
-    position: relative;
-    top: 830px;
-}
+
 
 #enter {
     bottom: 10px;
@@ -127,15 +131,17 @@ img:hover {
 }
 
 /*Welcome page*/
+
 #container {
     flex-direction: row;
 }
+
 .active {
     border-bottom: 1px solid #3a3a3a;
 }
 
 .menu {
-    display: flex; 
+    display: flex;
     left: 0;
 }
 
@@ -181,10 +187,17 @@ a {
     color: black;
 }
 
+#piechart {
+    position: relative;
+    top: 830px;
+    left: -30px;
+}
+
 /*@media screen max-width 650px*/
+
 @media only screen and (max-width: 650px) {
     #win-tables {
-    width: 350px;
+        width: 350px;
     }
 
     #headings {
@@ -195,11 +208,10 @@ a {
 /*@media screen max-width 1560px*/
 
 @media only screen and (max-width: 1560px) {
-    /*Styles for index.html*/
-    #container {
+    Styles for index.html #container {
         display: flex;
         padding: 40px;
-    } 
+    }
 
     #enter {
         bottom: 10px;
@@ -221,32 +233,34 @@ a {
     }
 
     /*Styles for game.html*/
+
     h1 {
         font-size: 2rem;
     }
+
     .play-area {
         flex-direction: row;
         height: 80px;
-        align-items: flex-end;      
+        align-items: flex-end;
         justify-content: flex-start;
         width: 30px;
     }
 
     #main {
         width: 100%;
-        height: 400px;;
+        height: 400px;
+        ;
         display: flex;
         flex-wrap: wrap;
         align-content: flex-start;
         flex-direction: column;
         justify-content: flex-start;
-        padding: 10px;;
-    }
-    .button-style {
-        display: flex;
+        padding: 10px;
+        ;
     }
 
-    #you-score, #dealer-score {
+    #you-score,
+    #dealer-score {
         display: flex;
         justify-content: space-around;
         text-align: center;
@@ -259,42 +273,33 @@ a {
         font-size: 12px;
         top: -80px;
     }
-   
+
     img {
         margin: 2px;
         background-color: white;
     }
 
-    #you-main, #dealer-main {
+    #you-main,
+    #dealer-main {
         justify-content: flex-start;
         height: 80px;
         width: 50px;
     }
 
-    #win-tables {
-        display: flex;
-        align-items: flex-end;
-        height: 100px;
-    }
-
-    #wins, #losses, #draws {
-        align-items: flex-end;
-        height: 150px;
-    }
-
-    #win-score, #loss-score, #draw-score {
+    #win-score,
+    #loss-score,
+    #draw-score {
         display: flex;
         align-items: flex-end;
         padding: 0px 20px 0px 20px;
     }
 
-    #piechart {
-        top: 690px;
-    }
 }
 
-@media only screen and (max-width: 2000px) and (min-width: 1560px){
-    
+/*Style menu in front page */
+
+@media only screen and (max-width: 2000px) and (min-width: 1560px) {
+
     .menu {
         margin-left: 230px;
     }

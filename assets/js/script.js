@@ -1,19 +1,13 @@
-let you = {
-    'score': 0,
-}
+document.getElementById('piechart').style.height = "75px";
+document.getElementById('piechart').style.width = "450px";
+document.getElementById('piechart').style.margin = "30px";
+document.getElementById('piechart').style.top = "850px";
 
-let dealer = {
-    'score': 0,
-}
 /* Change @media screens max-width 1560px*/
 
-const mediaQuery = window.matchMedia('(max-width: 1560px)');
-document.getElementById('piechart').style.height = "75px";
-document.getElementById('piechart').style.width = "500px";
-document.getElementById('piechart').style.padding = "30px";
+function handleTabletChange(mediaQuery) {
 
-function handleTabletChange(e) {
-    if (e.matches) {
+    if (mediaQuery.matches) {
         document.getElementById('bot').remove();
         document.getElementById('buttons').remove();
         document.getElementById('deal').remove();
@@ -22,55 +16,80 @@ function handleTabletChange(e) {
         <button aria-label="Stand" id="stand" type="button" class="btn btn-warning btn-lg">Stand</button>
         <button aria-label="Deal" id="deal" type="button" class="btn btn-danger btn-lg">Deal</button>
         `;
-
-    }
+    } 
 }
 
-mediaQuery.addListener(handleTabletChange)
+let mediaQuery = window.matchMedia('(max-width: 1560px)');
+handleTabletChange(mediaQuery);
+mediaQuery.addEventListener("change", () => {
+    this.handleTabletChange();
+}
+);
 
-handleTabletChange(mediaQuery)
-/**Show random card 
- * by pressing button 'hit'*/
 
-function showCard(you, dealer) {
+let you = {
+    'score': 0,
+    'div': '#you-main',
+}
+
+let dealer = {
+    'score': 0,
+    'div': '#dealer-main',
+}
+//Event listeners for buttons
+
+document.getElementById('hit').addEventListener('click', buttonHit);
+document.getElementById('stand').addEventListener('click', buttonStand);
+document.getElementById('deal').addEventListener('click', buttonDeal);
+
+/** by pressing button 'hit'*/
+function buttonHit () {
+    showCard(you);
+}
+
+//Show random card 
+ 
+function showCard(activePlayer) {
     const click = new Audio('assets/sounds/click.mp3');
     click.play();
     let number = Math.floor(Math.random() * 13) + 1;
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
+    document.querySelector(activePlayer['div']).appendChild(image);
 
-    if (you) {
-        document.getElementById('you-main').appendChild(image);
-        cardValue(number);
-    } else {
-        document.getElementById('dealer-main').appendChild(image);
-        dealerCardValue();
-    }
-    
+    cardValue(number, activePlayer);
+   
 }
 
-//Cards over 10 value = 10
+//Cards over 10.png value = 10
 
-function cardValue(randomNumber) {
+function cardValue(randomNumber, player) {
 
-    if (randomNumber > 10) {
-        randomNumber = 10;
-        showScore(randomNumber);
+    if (you == player) {
+        if (randomNumber > 10) {
+            randomNumber = 10;
+            showScore(randomNumber, you);
+        } else {
+            showScore(randomNumber, you);
+        };
     } else {
-        showScore(randomNumber);
+        if (randomNumber > 10) {
+            randomNumber = 10;
+            dealercards(randomNumber, dealer);
+            } else {
+            dealercards(randomNumber, dealer);
+            };
     }
 }
 
-//Show players score
+//Decide players score
 
-function showScore(num) {
+function showScore(numScore, you) {
 
-    if (num === 1) {
-
-        decideScoreWithAce1(num);
-
+    if (numScore === 1) {
+        decideScoreWithAce1(numScore);
     } else {
-        decideScore1(num);
+        decideScore1(numScore);
     }
 }
 
@@ -106,6 +125,7 @@ function decideScoreWithAce1(num) {
 
 }
 
+//Display score or winning/lossing status
 function decideScore1(num) {
 
     let score = you.score + parseInt(`${num}`);
@@ -132,45 +152,23 @@ function decideScore1(num) {
 function buttonStand(score) {
 
     if (score > 17) {
-
         winnerLoser();
-
     } else {
-        showCard();
-
-        dealerCardValue(number);
-
+        showCard(dealer);
     }
     document.getElementById('hit').disabled = true;
     document.getElementById('stand').disabled = true;
 }
 
-//Cards over 10 value = 10
-
-function dealerCardValue(randomNumber) {
-
-    if (randomNumber > 10) {
-        randomNumber = 10;
-        dealercards(randomNumber);
-    } else {
-        dealercards(randomNumber);
-    }
-
-}
-
 //Show dealers score                
 
-function dealercards(num) {
+function dealercards(num, dealer) {
 
 
     if (num === 1) {
-
         decideScoreWithAce(num);
-
     } else {
-
         decideScore(num);
-
     }
 
 }
@@ -227,7 +225,6 @@ function decideScore(num) {
 
     }
 }
-
 
 //Decide who is the Winner
 
@@ -320,10 +317,6 @@ function buttonDeal() {
         document.querySelector(container).innerHTML = '';
     });
 }
-
-document.getElementById('stand').addEventListener('click', buttonStand);
-document.getElementById('deal').addEventListener('click', buttonDeal);
-document.getElementById('hit').addEventListener('click', showCard);
 
 /* Google chart */
 
