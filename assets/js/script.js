@@ -1,7 +1,7 @@
+const person = prompt("Please enter your name");
 document.getElementById('piechart').style.height = "75px";
 document.getElementById('piechart').style.width = "450px";
 document.getElementById('piechart').style.margin = "30px";
-document.getElementById('piechart').style.top = "850px";
 
 /* Change @media screens max-width 1560px*/
 
@@ -65,20 +65,20 @@ function showCard(activePlayer) {
 
 function cardValue(randomNumber, player) {
 
-    if (you == player) {
+    if (you === player) {
         if (randomNumber > 10) {
             randomNumber = 10;
-            showScore(randomNumber, you);
+            showScore(randomNumber);
         } else {
-            showScore(randomNumber, you);
+            showScore(randomNumber);
         };
     } else {
         if (randomNumber > 10) {
             randomNumber = 10;
-            dealercards(randomNumber, dealer);
-            } else {
-            dealercards(randomNumber, dealer);
-            };
+            dealercards(randomNumber);
+        } else {
+            dealercards(randomNumber);
+         };
     }
 }
 
@@ -104,7 +104,7 @@ function decideScoreWithAce1(num) {
 
         document.getElementById('you-score').textContent = 'BUST!';
         document.getElementById('you-score').style.color = 'red';
-        document.getElementById('message').textContent = "YOU LOST!!!";
+        document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;console.log('107');
         lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -133,7 +133,7 @@ function decideScore1(num) {
     if (score > 21) {
         document.getElementById('you-score').textContent = 'BUST!';
         document.getElementById('you-score').style.color = 'red';
-        document.getElementById('message').textContent = "YOU LOST!!!";
+        document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;console.log('136');
         lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -162,8 +162,7 @@ function buttonStand(score) {
 
 //Show dealers score                
 
-function dealercards(num, dealer) {
-
+function dealercards(num) {
 
     if (num === 1) {
         decideScoreWithAce(num);
@@ -182,7 +181,7 @@ function decideScoreWithAce(num) {
     if (score > 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
-        document.getElementById('message').textContent = "YOU WON!!!";
+        document.getElementById('message').textContent = `YOU WON, ${person}!!!"`;console.log('184')
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -206,14 +205,12 @@ function decideScoreWithAce(num) {
 function decideScore(num) {
 
     let score = dealer.score + parseInt(`${num}`);
-    console.log(dealer.score, 'dealer.score');
-    console.log(num, 'num');
-    console.log(score, 'score');
+    console.log('mistake');
 
     if (score > 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
-        document.getElementById('message').textContent = "YOU WON!!!";
+        document.getElementById('message').textContent = `YOU WON, ${person}!!!`;console.log('213');
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -232,17 +229,17 @@ function winnerLoser() {
     if (dealer.score > 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
-        document.getElementById('message').textContent = "YOU WON!!!";
+        document.getElementById('message').textContent = `YOU WON, ${person}!!!`;console.log('232');
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else if (you.score > dealer.score) {
-        document.getElementById('message').textContent = "YOU WON!!!";
+        document.getElementById('message').textContent = `YOU WON, ${person}!!!`;console.log('237');
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else if (you.score < dealer.score) {
-        document.getElementById('message').textContent = "YOU LOST!!!";
+        document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;console.log('242');
         lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -310,7 +307,7 @@ function buttonDeal() {
     let score1 = dealer.score;
     document.getElementById('dealer-score').textContent = score1;
 
-    document.getElementById('message').textContent = "GOOD LUCK!!!";
+    document.getElementById('message').textContent = `GOOD LUCK, ${person}!!!`;
 
     const cardContainers = ['#you-main', '#dealer-main'];
     cardContainers.forEach(container => {

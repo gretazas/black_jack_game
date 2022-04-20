@@ -115,6 +115,7 @@ img:hover {
 }
 
 /*Google chart*/
+
 #chart_wrap {
     position: relative;
     padding-bottom: 100%;
@@ -122,6 +123,13 @@ img:hover {
     overflow: hidden;
 }
 
+#piechart {
+    position: relative;
+    top: 850px;
+    left: -30px;
+}
+
+/*Enter game button*/
 
 #enter {
     bottom: 10px;
@@ -150,10 +158,10 @@ img:hover {
 }
 
 #JackMenu {
-    left: 0;
+    left: 150px;
     position: absolute;
     width: 100%;
-    padding-left: 30px;
+    padding: 30px;
 }
 
 #JackMenu a {
@@ -187,12 +195,6 @@ a {
     color: black;
 }
 
-#piechart {
-    position: relative;
-    top: 830px;
-    left: -30px;
-}
-
 /*@media screen max-width 650px*/
 
 @media only screen and (max-width: 650px) {
@@ -203,12 +205,19 @@ a {
     #headings {
         width: 385px;
     }
+
+    #JackMenu {
+        padding: 30px;
+        left: 0;
+    }
 }
 
 /*@media screen max-width 1560px*/
 
 @media only screen and (max-width: 1560px) {
-    Styles for index.html #container {
+    /*Styles for index.html*/
+
+    #container {
         display: flex;
         padding: 40px;
     }
