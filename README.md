@@ -131,6 +131,10 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 [Hover.css:](https://ianlunn.github.io/Hover/)
     Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.<br>
 
+# Features
+
+Google piechart. [Link to Google piechart](https://developers.google.com/chart/interactive/docs/gallery/piechart)
+
 # Testing:
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
