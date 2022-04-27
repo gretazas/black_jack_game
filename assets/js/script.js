@@ -23,7 +23,7 @@ let mediaQuery = window.matchMedia('(max-width: 1560px)');
 handleTabletChange(mediaQuery);
 mediaQuery.addEventListener("change", () => {
     this.handleTabletChange();
-    }
+}
 );
 
 
@@ -335,12 +335,7 @@ function drawChart() {
         'legend': {
             position: 'bottom'
         },
-        'chartArea': {
-            left: 130,
-            top: 0,
-            width: "50%",
-            height: "50%"
-        },
+        
         'height': 100,
         'width': 500,
         'backgroundColor': 'rgb(50, 168, 82)',

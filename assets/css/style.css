@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap");
 
-body {
+#index-body {
+    background-repeat: no-repeat; 
+    background-size: cover;
+    font-family: 'Gothic A1', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    width:100%;
+}
+
+#game-body {
     font-family: 'Gothic A1', sans-serif;
     background-color: rgb(130, 214, 119);
     display: flex;
@@ -197,9 +208,9 @@ a {
     color: black;
 }
 
-/*@media screen max-width 1700px*/
+/*@media screen max-width 1560px*/
 
-@media only screen and (max-width: 1700px) {
+@media only screen and (max-width: 1560px) {
     
     /*Styles for index.html*/
 
@@ -227,6 +238,12 @@ a {
     }
 
     /*Styles for game.html*/
+
+    
+    #JackMenu {
+        left: 0;
+    }
+
 
     h1 {
         font-size: 2rem;
@@ -296,11 +313,39 @@ a {
     }
 }
 
-/*@media screen max-width 450px*/
+/*@media screen max-width 760px*/
 
-@media only screen and (max-width: 450px) { 
-    #headings {
-        font-size: 8px;
+@media only screen and (max-width: 760px) { 
+    #heading h1 {
+        font-size: 26px;
+    }
+
+    #heading {
+        width:310px;
+        padding: 15px;
+    }
+
+    #win-tables {
+        width: 350px;
     }
 }
 
+/*@media screen max-width 400px*/
+
+@media only screen and (max-width: 360px) {
+    button {
+        margin: 10px;
+    }
+
+    #win-tables {
+        width: 330px;
+    }
+
+    #heading h1 {
+        font-size: 22px;
+    }
+
+    #heading {
+        width: 270px;
+    }
+}
