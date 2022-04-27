@@ -23,7 +23,7 @@ let mediaQuery = window.matchMedia('(max-width: 1560px)');
 handleTabletChange(mediaQuery);
 mediaQuery.addEventListener("change", () => {
     this.handleTabletChange();
-}
+    }
 );
 
 

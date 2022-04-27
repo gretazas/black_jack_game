@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)<br>
- Link to the page with the Black Jack Game: <a target = "_blank" name="https://github.com/gretazas/black_jack_game">https://github.com/gretazas/black_jack_game</a>  
- Link to the GitHub page with the Black Jack Game: <a target = "_blank" name="https://gretazas.github.io/black_jack_game/">https://gretazas.github.io/black_jack_game/</a>
+ Link to the GitHub page with the Black Jack Game: <a target = "_blank" name="https://github.com/gretazas/black_jack_game">https://github.com/gretazas/black_jack_game</a>  
+ Link to the page with the Black Jack Game: <a target = "_blank" name="https://gretazas.github.io/black_jack_game/">https://gretazas.github.io/black_jack_game/</a>
 
 # Acknowledgements
 
