@@ -29,7 +29,19 @@ I love JavaScript even though I haven't learnt much yet and it’s really challe
 			console.log(‘cock-a-doodle-do’);
 		}
 
-## Issues and bugs
+# Contents
+* [Acknowledgements](#acknowledgements)
+* [Deployment](#deployment)
+    * [Initial Deployment](#INITIAL-DEPLOYMENT)
+    * [How To Fork A Repository](#HOW-TO-FORK-A-REPOSITORY)
+    * [How To Clone A Repository](#HOW-TO-CLONE-A-REPOSITORY)
+    * [How To Make A Local Clone](#HOW-TO-MAKE-A-LOCAL-CLONE)
+
+* [Features](#Features)
+
+* [Testing](#Testing)
+
+# Issues and bugs
 
  The line I was really stuck with was in the very last deal function. That function is responsible for refreshing the game and making it all clear to start the next one. I used .remove(‘img’) and it did the job. An error would come up at the console, so I started to investigate why.
 # ![SLACK](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white) <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" width="90">
@@ -119,7 +131,7 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 [Hover.css:](https://ianlunn.github.io/Hover/)
     Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.<br>
 
-    Testing:
+# Testing:
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
 
