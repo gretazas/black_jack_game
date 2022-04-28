@@ -2,7 +2,8 @@
  Link to the GitHub page with the Black Jack Game: <a target="_blank" name="https://github.com/gretazas/black_jack_game">https://github.com/gretazas/black_jack_game</a>  
  Link to the page with the Black Jack Game: <a target="_blank" name="https://gretazas.github.io/black_jack_game/">https://gretazas.github.io/black_jack_game/</a>
 
- <img src="assets/images/background.png" style="border:3px solid green" alt="Cards with playing chips">
+ <img src="assets/images/background.png" style="border:3git add .
+ px solid green" alt="Cards with playing chips">
 
 # Acknowledgements
 
