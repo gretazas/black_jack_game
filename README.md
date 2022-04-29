@@ -31,7 +31,7 @@ I love JavaScript even though I haven't learnt much yet and it’s really challe
 			return I sleep until alarm rings;
 			console.log(‘cock-a-doodle-do’);
 		}
-
+# Top
 # Contents
 * [Acknowledgements](#acknowledgements)
 * [Contents](#contents)
@@ -41,10 +41,23 @@ I love JavaScript even though I haven't learnt much yet and it’s really challe
     * [How To Clone A Repository](#how-to-clone-a-repository)
     * [How To Make A Local Clone](#how-to-make-a-local-clone)
 * [Issues and bugs](#issues-and-bugs)
-* [Use of the page](#use-of-the-page)
+* [User experience](#user-experience)
+    * [Landing page](#landing-page-would-have-four-links-forbr)
+    * [Navigation bar](#navigation-bar-and-enter-button)
 * [Future steps](#future-steps)
 * [Built with intention to practise use](#built-with-intention-to-practise-use)
-* [Features](#Features)
+    * HTML
+    * CSS
+    * JavaScript
+    * Git
+* [Languages Used](#languages-used)
+* [Proved By](#proved-by)
+    * [W3C markup validation](#the-w3c-markup-validation-service)
+    * [W3C css validation](#the-w3c-css-validation-service)
+    * [Responsive Design](#responsive-design)
+    * [Testing](#testing)
+* [Framewor(ks, Libraries & Programs I Used:](#built-with-intention-to-practise-use)
+* [Features](#features)
 * [Contact](#contact)
 * [Code](#code)
 * [Focus group](#focus-group)
@@ -102,7 +115,10 @@ The site was deployed to Github pages using the following steps:
 * In the Source section, click on the dropdown menu and select the Master branch.
 * Once the Master branch is selected the page will refresh to display a message stating "Your site is published at 
 
-# Issues and bugs
+
+<p align="right">(<a href="#top">Back to top</a>)</p>
+
+# Issues and Bugs
 
  The line I was really stuck with was in the very last deal function. That function is responsible for refreshing the game and making it all clear to start the next one. I used .remove(‘img’) and it did the job. An error would come up at the console, so I started to investigate why.
 # ![SLACK](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white) <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" width="90">
@@ -111,11 +127,11 @@ Eventually I had to get help and had a hard time comprehending that the appendCh
 Another issue I came up to was Google charts, I had difficulty with design, which left unresolved, could not get padding aplied to ellipse.
 I also had to get help with bug that did not show any errors at the console. This time was couple of styles clashing in responsive design.
 
-# <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" width="90">
+<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" width="90">
 
 Thanks to Code Institute and all the team behind it I was able to present my portfolio2 with confidence and pride. ![](https://img.shields.io/static/v1?label=&message=Pride&color=green) 
 
-# Use of the page
+# User Experience
 
  - This page is for people who would like to relax and take a moment away from their routine to have a little fun and play a bit of Black Jack against the bot.
  - First time users shoud get easy understanding of game tactics, possibilities in chance of getting the right card and getting the right idea how to play from links provided in landing page.
@@ -130,12 +146,13 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 * Navigation bar will let you go to Black Jack game and back to main.
 * Enter button at the landing page will open the game page.
 
-# Future steps
+# Future Steps
 
-* Make user accounts for contant visitors.
+* Make user accounts for constant visitors.
 * Keep information charts of their winning data.
 * To use web analitics to track visitor interaction.
 
+<p align="right">(<a href="#top">Back to top</a>)</p>
 
 
 # Built with intention to practise use:
@@ -144,18 +161,28 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 * Navigation of file tree
 * Creating, copying, and removing files and directories
 
-## HTML
+### HTML
 
 * Semantic elements, tags
 * Attributes
 
-## CSS
+### CSS
 
 * Class vs. id
 * Selectors
 * Typography
 * Positioning and floats
 * Color: hexadecimal, rgb and named
+
+### JavaScript
+
+* Pattern matching functionality
+* A score tracking system
+* The ability to play against the computer
+* The site’s users want to play an online game that has elements of chance.
+
+### Git
+
 * Git & Git workflow
 * git add
 * git commit
@@ -164,14 +191,7 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 * Create a repository
 * Deploy to personal page
 
-## JavaScript
-
-* Pattern matching functionality
-* A score tracking system
-* The ability to play against the computer
-* The site’s users want to play an online game that has elements of chance.
-
-# Languages I Used:
+# Languages Used:
 ![GitHub language count](https://img.shields.io/github/languages/count/gretazas/black_jack_game)<br>
 <br>
 ![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)<br>
@@ -182,10 +202,12 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 ![GitHub top language](https://img.shields.io/github/languages/top/gretazas/black_jack_game)
 
 * Also used : 
-  * [python3terminator](https://www.python.org/download/releases/3.0/)
+  * [Python3 terminator](https://www.python.org/download/releases/3.0/)
 
 
-# Proved by:
+<p align="right">(<a href="#top">Back to top</a>)</p>
+
+# Proved By:
 
 ## The W3C Markup Validation Service:
 <a href="http://validator.w3.org/check/referer"> <img src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png"
@@ -200,10 +222,44 @@ alt="html validator" /></a>
  
 [![GitHub Actions Status Badge](https://github.com/GoogleChrome/lighthouse/workflows/CI/badge.svg)](https://github.com/GoogleChrome/lighthouse/actions/workflows/ci.yml) [![GitHub Actions Status Badge](https://github.com/GoogleChrome/lighthouse/workflows/unit/badge.svg)](https://github.com/GoogleChrome/lighthouse/actions/workflows/unit.yml) [![GitHub Actions Status Badge](https://github.com/GoogleChrome/lighthouse/workflows/smoke/badge.svg)](https://github.com/GoogleChrome/lighthouse/actions/workflows/smoke.yml) [![Coverage Status](https://codecov.io/gh/GoogleChrome/lighthouse/branch/master/graph/badge.svg)](https://codecov.io/gh/GoogleChrome/lighthouse) [![Build tracker for Lighthouse](https://img.shields.io/badge/buildtracker-ok-blue)](https://lh-build-tracker.herokuapp.com/) [![NPM lighthouse package](https://img.shields.io/npm/v/lighthouse.svg)](https://npmjs.org/package/lighthouse)
 '
-## Responsive Design:
+<img src="assets/images/lightHouse.jpg" alt="Lighthouse repost image">
 
-[Link to: Am I Responsive](http://ami.responsivedesign.is/)
+# Responsive Design:
+
+## Link to: [Am I Responsive](http://ami.responsivedesign.is/)
 <img src="assets/images/responsive.png" alt="Responsive design image">
+
++ User would use different layout on screens 1560px and smaller.
++ I used JavaScript to change button positions on smaller screens.
++ Win, loose and draw table would get smaller.
++ Index.html wound get samller font and boxes would decrease acording to smaller screen size.
+
+<p align="right">(<a href="#top">Back to top</a>)</p>
+
+# Testing
+
++ Checked Ace logic working:
+  - If Ace worth 11 points when player will not reach score over 21.
+  - If Ace worth 1 point when score with Ace worth 11 would go over 21.
+
++ Check once score exceed over 21:
+  - Stop game immediately.
+  - "Bust!" message appears on player's score tab.
+  - Announce winner.
+
++ Digit in winnings tab:
+  - Increases by one in wins, if player won.
+  - Increases by one in losses if player lost.
+  - Increases by one in draws with each draw.
+
++ Piechart
+  - Graph changes to acording amout of wins, losses and draws.
+
++ Responive desing:
+  - Card position changes on smaller screens in oredr to have a better card view.
+  - Button positions change for easy access.
+  - Piechart and win tabs gets smaller to fit the screen.
+
 
 # Frameworks, Libraries & Programs I Used:
 
@@ -240,7 +296,6 @@ Google piechart. [Link to Google piechart](https://developers.google.com/chart/i
 ![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) https://github.com/gretazas<br>
 Greta Baliunaite: [ https://www.facebook.com/greta.baliunaite]( https://gretazas.github.io/portfolio_1/)
 
-
 # Code
 * All code was written by myself and was learnt from [www.codeinstitute.net](https://www.codeinstitute.net) or [w3schools.com](https://www.w3schools.com/).
 * Inspiration for the hero images was taken from the Love Running Walkthrough project from [www.codeinstitute.net](https://www.codeinstitute.net).
@@ -255,4 +310,4 @@ Greta Baliunaite: [ https://www.facebook.com/greta.baliunaite]( https://gretazas
   <br>
 ![Safe](https://img.shields.io/badge/Stay-Safe-red?logo=data:image/svg%2bxml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTEwIDUxMCIgaGVpZ2h0PSI1MTIiIHZpZXdCb3g9IjAgMCA1MTAgNTEwIiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnPjxnPjxwYXRoIGQ9Im0xNzQuNjEgMzAwYy0yMC41OCAwLTQwLjU2IDYuOTUtNTYuNjkgMTkuNzJsLTExMC4wOSA4NS43OTd2MTA0LjQ4M2g1My41MjlsNzYuNDcxLTY1aDEyNi44MnYtMTQ1eiIgZmlsbD0iI2ZmZGRjZSIvPjwvZz48cGF0aCBkPSJtNTAyLjE3IDI4NC43MmMwIDguOTUtMy42IDE3Ljg5LTEwLjc4IDI0LjQ2bC0xNDguNTYgMTM1LjgyaC03OC4xOHYtODVoNjguMThsMTE0LjM0LTEwMC4yMWMxMi44Mi0xMS4yMyAzMi4wNi0xMC45MiA0NC41LjczIDcgNi41NSAxMC41IDE1LjM4IDEwLjUgMjQuMnoiIGZpbGw9IiNmZmNjYmQiLz48cGF0aCBkPSJtMzMyLjgzIDM0OS42M3YxMC4zN2gtNjguMTh2LTYwaDE4LjU1YzI3LjQxIDAgNDkuNjMgMjIuMjIgNDkuNjMgNDkuNjN6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTM5OS44IDc3LjN2OC4wMWMwIDIwLjY1LTguMDQgNDAuMDctMjIuNjQgNTQuNjdsLTExMi41MSAxMTIuNTF2LTIyNi42NmwzLjE4LTMuMTljMTQuNi0xNC42IDM0LjAyLTIyLjY0IDU0LjY3LTIyLjY0IDQyLjYyIDAgNzcuMyAzNC42OCA3Ny4zIDc3LjN6IiBmaWxsPSIjZDAwMDUwIi8+PHBhdGggZD0ibTI2NC42NSAyNS44M3YyMjYuNjZsLTExMi41MS0xMTIuNTFjLTE0LjYtMTQuNi0yMi42NC0zNC4wMi0yMi42NC01NC42N3YtOC4wMWMwLTQyLjYyIDM0LjY4LTc3LjMgNzcuMy03Ny4zIDIwLjY1IDAgNDAuMDYgOC4wNCA1NC42NiAyMi42NHoiIGZpbGw9IiNmZjRhNGEiLz48cGF0aCBkPSJtMjEyLjgzIDM2MC4xMnYzMGg1MS44MnYtMzB6IiBmaWxsPSIjZmZjY2JkIi8+PHBhdGggZD0ibTI2NC42NSAzNjAuMTJ2MzBoMzYuMTRsMzIuMDQtMzB6IiBmaWxsPSIjZmZiZGE5Ii8+PC9nPjwvc3ZnPg==)
 
-
+<p align="right">(<a href="#top">Back to top</a>)</p>
