@@ -1,4 +1,8 @@
-const person = prompt("Please enter your name");
+document.getElementById('name-input').innerHTML += `
+        <label for="fname">Enter your name:</label>
+        <input type="text" id="fname" name="fname" value="">
+`
+const person = document.getElementById('fname').value;
 document.getElementById('piechart').style.height = "75px";
 document.getElementById('piechart').style.width = "450px";
 document.getElementById('piechart').style.margin = "30px";

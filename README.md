@@ -46,10 +46,10 @@ I love JavaScript even though I haven't learnt much yet and it’s really challe
     * [Navigation bar](#navigation-bar-and-enter-button)
 * [Future steps](#future-steps)
 * [Built with intention to practise use](#built-with-intention-to-practise-use)
-    * HTML
-    * CSS
-    * JavaScript
-    * Git
+    * [HTML](#html)
+    * [CSS](#css)
+    * [JavaScript](#javascript)
+    * [Git](#git)
 * [Languages Used](#languages-used)
 * [Proved By](#proved-by)
     * [W3C markup validation](#the-w3c-markup-validation-service)
@@ -253,7 +253,7 @@ alt="html validator" /></a>
   - Increases by one in draws with each draw.
 
 + Piechart
-  - Graph changes to acording amout of wins, losses and draws.
+  - Graph changes to according amout of wins, losses and draws.
 
 + Responive desing:
   - Card position changes on smaller screens in oredr to have a better card view.
@@ -288,7 +288,20 @@ alt="html validator" /></a>
 
 # Features
 
-Google piechart. [Link to Google piechart](https://developers.google.com/chart/interactive/docs/gallery/piechart)
+- Navigation bar for index and game pages.
+- Welcome heading.
+- Links in index page with information relatad to Bkack Jack game.
+- Button to enter the game.
+- Google piechart. [Link to Google piechart](https://developers.google.com/chart/interactive/docs/gallery/piechart)
+- Input asking for players name. 
+- Heading: 
+  - Wishing good luck, congrdulating with win and announcing loss or draw.
+  - Including players name if provided.
+- Buttons:
+  - Hit - to show card and start the game.
+  - Stand - to stop players game and pass turn to bot.
+  - Deal - to start game over.
+  - Bot - just for design of provided infornation purpose.
 
 
 # Contact
