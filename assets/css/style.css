@@ -55,7 +55,7 @@ button {
     margin: 20px;
 }
 
-#Enter {
+#enterGameButton {
     color: black;
 }
 /*Displays scores*/
@@ -150,11 +150,12 @@ img:hover {
 
 /*Enter game button*/
 
-#enter {
+#enterGameButton {
     bottom: 10px;
     display: flex;
     align-items: center;
-    padding: 30px 930px;
+    padding: 10px;
+    justify-content: center;
 }
 
 /*Welcome page*/
@@ -215,6 +216,10 @@ a {
     color: black;
 }
 
+form {
+    align-items: baseline;
+}
+
 /*@media screen max-width 1560px*/
 
 @media only screen and (max-width: 1560px) {
@@ -225,7 +230,7 @@ a {
         padding-left: 340px;
     }
 
-    #enter {
+    #enterGameButton {
         bottom: 10px;
         padding: 50px;
     }

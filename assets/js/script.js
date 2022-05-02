@@ -1,13 +1,27 @@
-document.getElementById('name-input').innerHTML += `
-        <label for="fname">Enter your name:</label>
-        <input type="text" id="fname" name="fname" value="">
-`
+let checking = document.getElementsByTagName('h1');
+checking.innerHTML = `jjj`;
+let checking2 = document.getElementsByTagName('section');
+checking2.innerHTML = `<div><h1>kjfhdkjghfkjhgfdkg</h1></div>`
+console.log(checking);
+console.log(checking2);
+
+/* Player's name input */
+let inputName = document.getElementById('enterGameButton').innerHTML = `
+    <form method="get">
+        <input type="text" id="fname" name="fname" value="" placeholder="Enter your name">
+        <button aria-label="Enter" id="enterGameButton" type="submit" class="btn btn-success btn-lg" onclick="window.location.href='game.html'" style="background-color:rgb(33, 142, 76)">Enter</button>
+    </form>
+`;
+console.log(inputName);
+document.getElementById('fname').style.height = "50px";
 const person = document.getElementById('fname').value;
+console.log(person);
+
 document.getElementById('piechart').style.height = "75px";
 document.getElementById('piechart').style.width = "450px";
 document.getElementById('piechart').style.margin = "30px";
 
-/* Change @media screens max-width 1560px*/
+/* Change @media screens max-width 1560px */
 
 function handleTabletChange(mediaQuery) {
 
@@ -20,15 +34,14 @@ function handleTabletChange(mediaQuery) {
         <button aria-label="Stand" id="stand" type="button" class="btn btn-warning btn-lg">Stand</button>
         <button aria-label="Deal" id="deal" type="button" class="btn btn-danger btn-lg">Deal</button>
         `;
-    } 
+    }
 }
 
 let mediaQuery = window.matchMedia('(max-width: 1560px)');
 handleTabletChange(mediaQuery);
 mediaQuery.addEventListener("change", () => {
     this.handleTabletChange();
-}
-);
+});
 
 
 let you = {
@@ -46,13 +59,13 @@ document.getElementById('hit').addEventListener('click', buttonHit);
 document.getElementById('stand').addEventListener('click', buttonStand);
 document.getElementById('deal').addEventListener('click', buttonDeal);
 
-/** by pressing button 'hit'*/
-function buttonHit () {
+/** by pressing button 'hit' */
+function buttonHit() {
     showCard(you);
 }
 
 //Show random card 
- 
+
 function showCard(activePlayer) {
     const click = new Audio('assets/sounds/click.mp3');
     click.play();
@@ -62,7 +75,7 @@ function showCard(activePlayer) {
     document.querySelector(activePlayer['div']).appendChild(image);
 
     cardValue(number, activePlayer);
-   
+
 }
 
 //Cards over 10.png value = 10
@@ -82,7 +95,7 @@ function cardValue(randomNumber, player) {
             dealercards(randomNumber);
         } else {
             dealercards(randomNumber);
-         };
+        };
     }
 }
 
@@ -108,7 +121,8 @@ function decideScoreWithAce1(num) {
 
         document.getElementById('you-score').textContent = 'BUST!';
         document.getElementById('you-score').style.color = 'red';
-        document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;console.log('107');
+        document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;
+        console.log('107');
         lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -137,7 +151,8 @@ function decideScore1(num) {
     if (score > 21) {
         document.getElementById('you-score').textContent = 'BUST!';
         document.getElementById('you-score').style.color = 'red';
-        document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;console.log('136');
+        document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;
+        console.log('136');
         lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -185,7 +200,8 @@ function decideScoreWithAce(num) {
     if (score > 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
-        document.getElementById('message').textContent = `YOU WON, ${person}!!!"`;console.log('184')
+        document.getElementById('message').textContent = `YOU WON, ${person}!!!"`;
+        console.log('184')
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -214,7 +230,8 @@ function decideScore(num) {
     if (score > 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
-        document.getElementById('message').textContent = `YOU WON, ${person}!!!`;console.log('213');
+        document.getElementById('message').textContent = `YOU WON, ${person}!!!`;
+        console.log('213');
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -233,17 +250,20 @@ function winnerLoser() {
     if (dealer.score > 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
-        document.getElementById('message').textContent = `YOU WON, ${person}!!!`;console.log('232');
+        document.getElementById('message').textContent = `YOU WON, ${person}!!!`;
+        console.log('232');
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else if (you.score > dealer.score) {
-        document.getElementById('message').textContent = `YOU WON, ${person}!!!`;console.log('237');
+        document.getElementById('message').textContent = `YOU WON, ${person}!!!`;
+        console.log('237');
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else if (you.score < dealer.score) {
-        document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;console.log('242');
+        document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;
+        console.log('242');
         lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -339,7 +359,7 @@ function drawChart() {
         'legend': {
             position: 'bottom'
         },
-        
+
         'height': 100,
         'width': 500,
         'backgroundColor': 'rgb(50, 168, 82)',

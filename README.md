@@ -124,7 +124,7 @@ The site was deployed to Github pages using the following steps:
 # ![SLACK](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white) <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" width="90">
 Eventually I had to get help and had a hard time comprehending that the appendChild node is not a literal print into .innerHTML.
 
-Another issue I came up to was Google charts, I had difficulty with design, which left unresolved, could not get padding aplied to ellipse.
+Another issue I came up to was Google charts, I had difficulty with design, which left unresolved, could not get padding applied to elipse.
 I also had to get help with bug that did not show any errors at the console. This time was couple of styles clashing in responsive design.
 
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" width="90">
@@ -310,7 +310,7 @@ alt="html validator" /></a>
 Greta Baliunaite: [ https://www.facebook.com/greta.baliunaite]( https://gretazas.github.io/portfolio_1/)
 
 # Code
-* All code was written by myself and was learnt from [www.codeinstitute.net](https://www.codeinstitute.net) or [w3schools.com](https://www.w3schools.com/).
+* All code was written by myself and was learnt from [www.codeinstitute.net](https://www.codeinstitute.net) and [w3schools.com](https://www.w3schools.com/).
 * Inspiration for the hero images was taken from the Love Running Walkthrough project from [www.codeinstitute.net](https://www.codeinstitute.net).
 * Icons for the footer were taken from [FontAwesome](https://fontawesome.com/) and is cited in the attributes section of the footer.
 
@@ -318,6 +318,7 @@ Greta Baliunaite: [ https://www.facebook.com/greta.baliunaite]( https://gretazas
 * I'd like to thank the following people for the help they gave me with this project:
   - My daughter Madelyne for helping me with README.md page and checking the game function.<br>
   - Sean, Ed and Gemma from Code Institute Tutor Assistance.<br>
+  - Mentor Anthony.
   <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" width="90">
   <br>
   <br>
