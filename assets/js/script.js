@@ -1,25 +1,24 @@
-let checking = document.getElementsByTagName('h1');
-checking.innerHTML = `jjj`;
-let checking2 = document.getElementsByTagName('section');
-checking2.innerHTML = `<div><h1>kjfhdkjghfkjhgfdkg</h1></div>`
-console.log(checking);
-console.log(checking2);
-
 /* Player's name input */
-let inputName = document.getElementById('enterGameButton').innerHTML = `
+
+let inputName = document.getElementById('enterGameButton').innerHTML += `
     <form method="get">
-        <input type="text" id="fname" name="fname" value="" placeholder="Enter your name">
-        <button aria-label="Enter" id="enterGameButton" type="submit" class="btn btn-success btn-lg" onclick="window.location.href='game.html'" style="background-color:rgb(33, 142, 76)">Enter</button>
+        <input type="text" id="fname" placeholder="Enter your name">
+        <button aria-label="Enter" id="gameButton" class="btn btn-success btn-lg" "style="background-color:rgb(33, 142, 76)">Enter</button>
     </form>
 `;
 console.log(inputName);
 document.getElementById('fname').style.height = "50px";
-const person = document.getElementById('fname').value;
-console.log(person);
-
-document.getElementById('piechart').style.height = "75px";
-document.getElementById('piechart').style.width = "450px";
-document.getElementById('piechart').style.margin = "30px";
+localStorage.setItem('name', 'unknown');
+const personValue = document.getElementById('fname');
+const btnInput = document.getElementById('gameButton');
+btnInput.onclick = function () {
+    const player = personValue.value;
+    const person = localStorage.getItem(player);
+    //window.location.href = 'game.html';
+    console.log(player);
+    console.log(person);
+};
+console.log(localStorage);
 
 /* Change @media screens max-width 1560px */
 
@@ -109,6 +108,8 @@ function showScore(numScore, you) {
         decideScore1(numScore);
     }
 }
+
+
 
 //Decide players score and message along with it
 
@@ -368,4 +369,10 @@ function drawChart() {
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
     chart.draw(data, options);
-}
+};
+
+/* Google piechart */
+
+document.getElementById('piechart').style.height = "75px";
+document.getElementById('piechart').style.width = "450px";
+document.getElementById('piechart').style.margin = "30px";
