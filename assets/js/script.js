@@ -1,47 +1,34 @@
-/* Player's name input */
-
-let inputName = document.getElementById('enterGameButton').innerHTML += `
-    <form method="get">
-        <input type="text" id="fname" placeholder="Enter your name">
-        <button aria-label="Enter" id="gameButton" class="btn btn-success btn-lg" "style="background-color:rgb(33, 142, 76)">Enter</button>
-    </form>
-`;
-console.log(inputName);
-document.getElementById('fname').style.height = "50px";
-localStorage.setItem('name', 'unknown');
-const personValue = document.getElementById('fname');
-const btnInput = document.getElementById('gameButton');
-btnInput.onclick = function () {
-    const player = personValue.value;
-    const person = localStorage.getItem(player);
-    //window.location.href = 'game.html';
-    console.log(player);
-    console.log(person);
-};
-console.log(localStorage);
-
-/* Change @media screens max-width 1560px */
+// Change @media screens max-width 1560px
 
 function handleTabletChange(mediaQuery) {
 
-    if (mediaQuery.matches) {
-        document.getElementById('bot').remove();
-        document.getElementById('buttons').remove();
-        document.getElementById('deal').remove();
-        document.getElementById('deal-button').innerHTML += `
-        <button aria-label="Hit" id="hit" type="button" class="btn btn-success btn-lg" style="background-color:rgb(33, 142, 76)">Hit</button>
-        <button aria-label="Stand" id="stand" type="button" class="btn btn-warning btn-lg">Stand</button>
-        <button aria-label="Deal" id="deal" type="button" class="btn btn-danger btn-lg">Deal</button>
-        `;
-    }
-}
+     if (mediaQuery.matches) {
+         document.getElementById('bot').remove();
+         document.getElementById('buttons').remove();
+         document.getElementById('deal').remove();
+         document.getElementById('deal-button').innerHTML += `
+         <button aria-label="Hit" id="hit" type="button" class="btn btn-success btn-lg" style="background-color:rgb(33, 142, 76)">Hit</button>
+         <button aria-label="Stand" id="stand" type="button" class="btn btn-warning btn-lg">Stand</button>
+         <button aria-label="Deal" id="deal" type="button" class="btn btn-danger btn-lg">Deal</button>
+         `;
+     }
+ }
 
-let mediaQuery = window.matchMedia('(max-width: 1560px)');
-handleTabletChange(mediaQuery);
-mediaQuery.addEventListener("change", () => {
-    this.handleTabletChange();
+let  mediaQuery = window.matchMedia('(max-width: 1560px)');
+ handleTabletChange(mediaQuery);
+ mediaQuery.addEventListener("change", () => {
+     this.handleTabletChange();
 });
 
+// Google piechart 
+
+document.getElementById('piechart').style.height = "75px";
+document.getElementById('piechart').style.width = "450px";
+document.getElementById('piechart').style.margin = "30px";
+
+//A variable from script.js, from index.html input
+
+let person = sessionStorage.getItem('name');
 
 let you = {
     'score': 0,
@@ -58,7 +45,7 @@ document.getElementById('hit').addEventListener('click', buttonHit);
 document.getElementById('stand').addEventListener('click', buttonStand);
 document.getElementById('deal').addEventListener('click', buttonDeal);
 
-/** by pressing button 'hit' */
+// by pressing button 'hit'
 function buttonHit() {
     showCard(you);
 }
@@ -87,14 +74,14 @@ function cardValue(randomNumber, player) {
             showScore(randomNumber);
         } else {
             showScore(randomNumber);
-        };
+        }
     } else {
         if (randomNumber > 10) {
             randomNumber = 10;
             dealercards(randomNumber);
         } else {
             dealercards(randomNumber);
-        };
+        }
     }
 }
 
@@ -167,7 +154,7 @@ function decideScore1(num) {
     }
 }
 
-/**Button 'Stand' changes active players from 'you' to 'dealer'*/
+//Button 'Stand' changes active players from 'you' to 'dealer'
 
 function buttonStand(score) {
 
@@ -281,13 +268,14 @@ function winnerLoser() {
 let wins = 0;
 let losses = 0;
 let draws = 0;
+let oldScore;
 
 
 function winsNum() {
     console.log('WIN');
     const harp = new Audio('assets/sounds/harp .wav');
     harp.play();
-    let oldScore = parseInt(document.getElementById('win-score').textContent);
+    oldScore = parseInt(document.getElementById('win-score').textContent);
     wins += 1;
     document.getElementById('win-score').textContent = wins;
     drawChart();
@@ -297,7 +285,7 @@ function lossesNum() {
     console.log('LOSS');
     const glassBreaking = new Audio('assets/sounds/glassbreaking.wav');
     glassBreaking.play();
-    let oldScore = parseInt(document.getElementById('loss-score').textContent);
+    oldScore = parseInt(document.getElementById('loss-score').textContent);
     losses += 1;
     document.getElementById('loss-score').textContent = losses;
     drawChart();
@@ -305,13 +293,13 @@ function lossesNum() {
 
 function drawsNum() {
     console.log('DRAW');
-    let oldScore = parseInt(document.getElementById('draw-score').textContent);
+    oldScore = parseInt(document.getElementById('draw-score').textContent);
     draws += 1;
     document.getElementById('draw-score').textContent = draws;
     drawChart();
 }
 
-/**Start over */
+//Start over 
 
 function buttonDeal() {
 
@@ -340,7 +328,7 @@ function buttonDeal() {
     });
 }
 
-/* Google chart */
+// Google chart 
 
 google.charts.load('current', {
     'packages': ['corechart']
@@ -369,10 +357,6 @@ function drawChart() {
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
     chart.draw(data, options);
-};
+}
 
-/* Google piechart */
 
-document.getElementById('piechart').style.height = "75px";
-document.getElementById('piechart').style.width = "450px";
-document.getElementById('piechart').style.margin = "30px";
