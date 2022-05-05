@@ -16,7 +16,7 @@ const btnInput = document.getElementById('gameButton');
 btnInput.onclick = function () {
     const player = personValue.value;
     sessionStorage.setItem('name', player);
-    window.location.href = "/game.html";
+    window.location.href = "https://gretazas.github.io/black_jack_game/game.html";
 };
 
 nameInputEnter = document.getElementById('fname');
@@ -25,7 +25,7 @@ nameInputEnter.addEventListener("keyup", function(event) {
       event.preventDefault();
       const player = personValue.value;
       sessionStorage.setItem('name', player);
-      window.location.href = "/game.html";
+      window.location.href = "https://gretazas.github.io/black_jack_game/game.html";
       document.getElementById("gameButton").click();
     }
   });
