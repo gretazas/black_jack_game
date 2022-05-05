@@ -233,6 +233,8 @@ form {
     #enterGameButton {
         bottom: 10px;
         padding: 50px;
+        justify-content: flex-start;
+
     }
 
     .menu {
@@ -363,5 +365,13 @@ form {
 
     #heading {
         width: 270px;
+    }
+
+    fieldset #gameButton button {
+        left: 30px;
+    }
+
+    #enterGameButton {
+        padding: 20px;
     }
 }
