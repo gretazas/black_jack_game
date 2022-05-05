@@ -2,22 +2,22 @@
 
 function handleTabletChange(mediaQuery) {
 
-     if (mediaQuery.matches) {
-         document.getElementById('bot').remove();
-         document.getElementById('buttons').remove();
-         document.getElementById('deal').remove();
-         document.getElementById('deal-button').innerHTML += `
+    if (mediaQuery.matches) {
+        document.getElementById('bot').remove();
+        document.getElementById('buttons').remove();
+        document.getElementById('deal').remove();
+        document.getElementById('deal-button').innerHTML += `
          <button aria-label="Hit" id="hit" type="button" class="btn btn-success btn-lg" style="background-color:rgb(33, 142, 76)">Hit</button>
          <button aria-label="Stand" id="stand" type="button" class="btn btn-warning btn-lg">Stand</button>
          <button aria-label="Deal" id="deal" type="button" class="btn btn-danger btn-lg">Deal</button>
          `;
-     }
- }
+    }
+}
 
-let  mediaQuery = window.matchMedia('(max-width: 1560px)');
- handleTabletChange(mediaQuery);
- mediaQuery.addEventListener("change", () => {
-     this.handleTabletChange();
+let mediaQuery = window.matchMedia('(max-width: 1560px)');
+handleTabletChange(mediaQuery);
+mediaQuery.addEventListener("change", () => {
+    this.handleTabletChange();
 });
 
 // Google piechart 
@@ -59,9 +59,7 @@ function showCard(activePlayer) {
     let image = document.createElement('img');
     image.src = 'assets/images/' + `${number}` + '.png';
     document.querySelector(activePlayer['div']).appendChild(image);
-
     cardValue(number, activePlayer);
-
 }
 
 //Cards over 10.png value = 10
@@ -110,7 +108,6 @@ function decideScoreWithAce1(num) {
         document.getElementById('you-score').textContent = 'BUST!';
         document.getElementById('you-score').style.color = 'red';
         document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;
-        console.log('107');
         lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -120,13 +117,13 @@ function decideScoreWithAce1(num) {
         score += 10;
         you.score = score;
         document.getElementById('you-score').textContent = score;
-        console.log(score, '+10');
+
     } else {
 
         score - 10;
         you.score = score;
         document.getElementById('you-score').textContent = score;
-        console.log(score, '-10');
+
     }
 
 }
@@ -140,7 +137,6 @@ function decideScore1(num) {
         document.getElementById('you-score').textContent = 'BUST!';
         document.getElementById('you-score').style.color = 'red';
         document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;
-        console.log('136');
         lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -189,7 +185,6 @@ function decideScoreWithAce(num) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
         document.getElementById('message').textContent = `YOU WON, ${person}!!!"`;
-        console.log('184')
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -198,37 +193,30 @@ function decideScoreWithAce(num) {
         score += 10
         dealer.score = score;
         document.getElementById('dealer-score').textContent = score;
-
         buttonStand(score);
 
     } else {
         dealer.score += score;
         document.getElementById('dealer-score').textContent = score;
-
         buttonStand(score);
-
     }
 }
 
 function decideScore(num) {
 
     let score = dealer.score + parseInt(`${num}`);
-    console.log('mistake');
 
     if (score > 21) {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
         document.getElementById('message').textContent = `YOU WON, ${person}!!!`;
-        console.log('213');
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else {
         dealer.score = score;
         document.getElementById('dealer-score').textContent = score;
-
         buttonStand(score);
-
     }
 }
 
@@ -239,19 +227,16 @@ function winnerLoser() {
         document.getElementById('dealer-score').textContent = 'BUST!';
         document.getElementById('dealer-score').style.color = 'red';
         document.getElementById('message').textContent = `YOU WON, ${person}!!!`;
-        console.log('232');
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else if (you.score > dealer.score) {
         document.getElementById('message').textContent = `YOU WON, ${person}!!!`;
-        console.log('237');
         winsNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
     } else if (you.score < dealer.score) {
         document.getElementById('message').textContent = `YOU LOST, ${person}!!!`;
-        console.log('242');
         lossesNum();
         document.getElementById('hit').disabled = true;
         document.getElementById('stand').disabled = true;
@@ -272,7 +257,6 @@ let oldScore;
 
 
 function winsNum() {
-    console.log('WIN');
     const harp = new Audio('assets/sounds/harp .wav');
     harp.play();
     oldScore = parseInt(document.getElementById('win-score').textContent);
@@ -282,7 +266,6 @@ function winsNum() {
 }
 
 function lossesNum() {
-    console.log('LOSS');
     const glassBreaking = new Audio('assets/sounds/glassbreaking.wav');
     glassBreaking.play();
     oldScore = parseInt(document.getElementById('loss-score').textContent);
@@ -292,7 +275,6 @@ function lossesNum() {
 }
 
 function drawsNum() {
-    console.log('DRAW');
     oldScore = parseInt(document.getElementById('draw-score').textContent);
     draws += 1;
     document.getElementById('draw-score').textContent = draws;
@@ -358,5 +340,3 @@ function drawChart() {
 
     chart.draw(data, options);
 }
-
-

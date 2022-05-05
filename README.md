@@ -1,13 +1,13 @@
 ![](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)<br>
- Link to the GitHub page with the Black Jack Game: <a target="_blank" name="https://github.com/gretazas/black_jack_game">https://github.com/gretazas/black_jack_game</a>  
- Link to the page with the Black Jack Game: <a target="_blank" name="https://gretazas.github.io/black_jack_game/">https://gretazas.github.io/black_jack_game/</a>
+ Link to the GitHub page with the Blackjack Game: <a target="_blank" name="https://github.com/gretazas/black_jack_game">https://github.com/gretazas/black_jack_game</a>  
+ Link to the page with the Blackjack Game: <a target="_blank" name="https://gretazas.github.io/black_jack_game/">https://gretazas.github.io/black_jack_game/</a>
 
  <img src="assets/images/background.png" style="border:3git add .
  px solid green" alt="Cards with playing chips">
 
 # Acknowledgements
 
-When the pandemic hit, I was forced to stay at home for six weeks. Instead of sitting there and doing nothing I decided to take action and learn something new. A Code Institute advertisement popped up. “5 Day Coding Challenge”. I started it and I coded all the way as far as JavaScript, through Udemy and videos on YouTube. There was this Black Jack Game challenge I decided to take part in. I was a complete copycat. I copied all the code down without any understanding of what it actually meant and even then, it was still magical! The way you write the code on one canvas and it appears on another canvas; it felt amazing!
+When the pandemic hit, I was forced to stay at home for six weeks. Instead of sitting there and doing nothing I decided to take action and learn something new. A Code Institute advertisement popped up. “ 5 Day Coding Challenge”. I started it and I coded all the way as far as JavaScript, through Udemy and videos on YouTube. There was this Blackjack Game challenge I decided to take part in. I was a complete copycat. I copied all the code down without any understanding of what it actually meant and even then, it was still magical! The way you write the code on one canvas and it appears on another canvas; felt amazing!
 
 Unfortunately, shortly after those studies, my daughter was diagnosed with Type 1 Diabetes and my mother was diagnosed with stage 3 terminal cancer. They were both living with me and I was the only one there to take care of them.
 
@@ -15,20 +15,20 @@ Two and a half years later, I was browsing through SpringBoard and noticed that 
 
 ![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
-Once I passed the JavaScript course and was ready for my portfolio2 and I knew exactly what I wanted to do: THE BLACK JACK GAME! 
+Once I passed the JavaScript course and was ready for my portfolio2 and I knew exactly what I wanted to do: THE BLACKJACK GAME! 
 To be honest- it intimidated me. I remember in the past, the code involved looked like a foreign language to me. Since I was ahead in my course, I had time to think it through. One day, I sat down, scribbled a few functions and the journey began… It was so adventurous. Function after function- the project was coming together.  
 
 Back then, when I was originally doing the challenge all the cards were presented in the array and another array had all the values of each card. I came up with this idea where I name my images as numbers and call them straight away from the function where I get 'assets/images/' + \`${randomNumber}\` + '.png';
 And added another function to assign a value of ten to all the cards >10.
 
-The trickiest part was to add logic to the Ace card. Its value could be either 1 or 11 depending on the present score. So the bot makes a decision according to current score; if the score with the Ace value 11 is under 21 - its value is 11, otherwise Ace = 1;
+The trickiest part was to add logic to the Ace card. Its value could be either 1 or 11 depending on the present score. So the bot decides according to the current score; if the score with the Ace value 11 is under 21 - its value is 11, otherwise Ace = 1;
 
-I love JavaScript even though I haven't learnt much yet and it’s really challenging at times. Once I was joking around and wrote this message to my 13 year old daughter:
+I love JavaScript even though I haven't learnt much yet and it’s really challenging at times. Once I was joking around and wrote this message to my 13-year-old daughter:
 		I put alarm for 9 o\`clock if (you`re up > 9 ) {
-			return wake me up;
+			return wake-me-up;
 			console.log(‘Good morning Mom!’);
 		} else {
-			return I sleep until alarm rings;
+			return I-sleep-until-alarm-rings;
 			console.log(‘cock-a-doodle-do’);
 		}
 # Top
@@ -133,17 +133,17 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 
 # User Experience
 
- - This page is for people who would like to relax and take a moment away from their routine to have a little fun and play a bit of Black Jack against the bot.
+ - This page is for people who would like to relax and take a moment away from their routine to have a little fun and play a bit of Blackjack against the bot.
  - First time users shoud get easy understanding of game tactics, possibilities in chance of getting the right card and getting the right idea how to play from links provided in landing page.
  - Constant visitors shold get a sence of adventure, relaxation and fun.
 ### Landing page would have four links for:<br>
-* Origin of Black Jack Game.
-* Rules of Black Jack Game.
+* Origin of Blackjack Game.
+* Rules of Blackjack Game.
 * Possibility theory.
 * Readme Page.
 
 ### Navigation bar and Enter button
-* Navigation bar will let you go to Black Jack game and back to main.
+* Navigation bar will let you go to Blackjack game and back to main.
 * Enter button at the landing page will open the game page.
 
 # Future Steps
