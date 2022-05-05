@@ -56,7 +56,7 @@ I love JavaScript even though I haven't learnt much yet and it’s really challe
     * [W3C css validation](#the-w3c-css-validation-service)
     * [Responsive Design](#responsive-design)
     * [Testing](#testing)
-* [Framewor(ks, Libraries & Programs I Used:](#built-with-intention-to-practise-use)
+* [Frameworks, Libraries & Programs I Used:](#built-with-intention-to-practise-use)
 * [Features](#features)
 * [Contact](#contact)
 * [Code](#code)
@@ -125,7 +125,7 @@ The site was deployed to Github pages using the following steps:
 Eventually I had to get help and had a hard time comprehending that the appendChild node is not a literal print into .innerHTML.
 
 Another issue I came up to was Google charts, I had difficulty with design, which left unresolved, could not get padding applied to elipse.
-I also had to get help with bug that did not show any errors at the console. This time was couple of styles clashing in responsive design.
+I also had to get help with the bug that did not show any errors at the console. This time there were a couple of styles clashing in responsive design.
 
 <img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" width="90">
 
@@ -134,7 +134,7 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 # User Experience
 
  - This page is for people who would like to relax and take a moment away from their routine to have a little fun and play a bit of Blackjack against the bot.
- - First time users shoud get easy understanding of game tactics, possibilities in chance of getting the right card and getting the right idea how to play from links provided in landing page.
+ - First time users should get an easy understanding of game tactics, possibilities in chance of getting the right card and getting the right idea how to play from links provided in landing page.
  - Constant visitors shold get a sence of adventure, relaxation and fun.
 ### Landing page would have four links for:<br>
 * Origin of Blackjack Game.
@@ -150,7 +150,7 @@ Thanks to Code Institute and all the team behind it I was able to present my por
 
 * Make user accounts for constant visitors.
 * Keep information charts of their winning data.
-* To use web analitics to track visitor interaction.
+* To use web analytics to track visitor interaction.
 
 <p align="right">(<a href="#top">Back to top</a>)</p>
 
@@ -229,9 +229,9 @@ alt="html validator" /></a>
 ## Link to: [Am I Responsive](http://ami.responsivedesign.is/)
 <img src="assets/images/responsive.png" alt="Responsive design image">
 
-+ User would use different layout on screens 1560px and smaller.
++ User would use a different layout on screens 1560px and smaller.
 + I used JavaScript to change button positions on smaller screens.
-+ Win, loose and draw table would get smaller.
++ Win, lose and draw tables would get smaller.
 + Index.html wound get samller font and boxes would decrease acording to smaller screen size.
 
 <p align="right">(<a href="#top">Back to top</a>)</p>
@@ -239,26 +239,26 @@ alt="html validator" /></a>
 # Testing
 
 + Checked Ace logic working:
-  - If Ace worth 11 points when player will not reach score over 21.
-  - If Ace worth 1 point when score with Ace worth 11 would go over 21.
+  - If an Ace is worth 11 points when the player will not reach score over 21.
+  - If an Ace is worth 1 point, the score with Ace worth 11 would go over 21.
 
 + Check once score exceed over 21:
-  - Stop game immediately.
-  - "Bust!" message appears on player's score tab.
+  - Stop the game immediately.
+  - "Bust!" message appears on the player's score tab.
   - Announce winner.
 
 + Digit in winnings tab:
-  - Increases by one in wins, if player won.
-  - Increases by one in losses if player lost.
+  - Increases by one in wins, if the player won.
+  - Increases by one in losses if the player lost.
   - Increases by one in draws with each draw.
 
 + Piechart
-  - Graph changes to according amout of wins, losses and draws.
+  - Graph changes to according amount of wins, losses and draws.
 
-+ Responive desing:
-  - Card position changes on smaller screens in oredr to have a better card view.
++ Responsive design:
+  - Card position changes on smaller screens in order to have a better card view.
   - Button positions change for easy access.
-  - Piechart and win tabs gets smaller to fit the screen.
+  - Piechart and win tabs get smaller to fit the screen.
 
 
 # Frameworks, Libraries & Programs I Used:
@@ -290,18 +290,18 @@ alt="html validator" /></a>
 
 - Navigation bar for index and game pages.
 - Welcome heading.
-- Links in index page with information relatad to Bkack Jack game.
+- Links in index page with information relatad to Bkackjack game.
 - Button to enter the game.
 - Google piechart. [Link to Google piechart](https://developers.google.com/chart/interactive/docs/gallery/piechart)
 - Input asking for players name. 
 - Heading: 
-  - Wishing good luck, congrdulating with win and announcing loss or draw.
+  - Wishing good luck, congratulating with win and announcing loss or draw.
   - Including players name if provided.
 - Buttons:
-  - Hit - to show card and start the game.
-  - Stand - to stop players game and pass turn to bot.
-  - Deal - to start game over.
-  - Bot - just for design of provided infornation purpose.
+  - Hit - to show a card and start the game.
+  - Stand - to stop player's game and pass turn to bot.
+  - Deal - to start the game over.
+  - Bot - just for design of provided information purpose.
 
 
 # Contact
